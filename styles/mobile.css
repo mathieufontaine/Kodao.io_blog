@@ -1,0 +1,32 @@
+@media (max-width: 900px) {
+  html {
+    font-size: 9px;
+  }
+  .card_wrapper {
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+}
+
+@media (max-width: 650px) {
+  html {
+    font-size: 8px;
+  }
+  .container {
+    padding: 5%;
+  }
+  .hero_headings {
+    /* flex-direction: column;
+    align-items: flex-start; */
+    /* grid-gap: 20px; */
+    padding: 20px 5%;
+  }
+  .article_video {
+    width: 100%;
+    /* height: 250px; */
+  }
+  .card_wrapper {
+    grid-template-columns: 1fr;
+  }
+}

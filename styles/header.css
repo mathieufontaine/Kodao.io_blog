@@ -1,0 +1,135 @@
+/* Header */
+
+.header {
+  --text: #ffffff;
+  --text-inverse: #000000;
+  --background: rgba(0, 0, 0, 0.8);
+  --background-inverse: rgba(221, 220, 220, 0.4);
+  color: var(--text);
+  height: 10vh;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 5%;
+  background-color: var(--background);
+  backdrop-filter: blur(10px) saturate(180%);
+  border-bottom: 2px solid #ffffff;
+  /*transition: all 0.7s ease;*/
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  width: 150px;
+}
+
+.logo_link {
+  position: absolute;
+  left: 5%;
+}
+
+/* Navbar */
+
+.navbar {
+}
+
+.menu {
+  display: none;
+  position: fixed;
+  top: 10vh;
+  right: -200px;
+  height: 90vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  z-index: 20;
+  /* background: rgba(0, 0, 0, 0.85); */
+  background: rgba(168, 123, 203, 0.95);
+  width: 200px;
+  transition: all 0.5s ease-in-out;
+}
+.menu_item {
+  padding: 20px 0;
+}
+
+.menu_item::after {
+  content: "";
+  height: 2px;
+  width: 0%;
+  background: white;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  transition: 0.5s;
+}
+
+.menu_item:hover::after {
+  width: 100%;
+}
+
+.menu_link {
+  color: white;
+  font-size: 2rem;
+}
+
+.nav-scrolled {
+  --background: rgba(38, 38, 38, 0.5);
+  --background-inverse: rgba(22, 22, 22, 0.5);
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  background: #000000;
+}
+
+.navbar_item,
+.menu_item {
+  list-style: none;
+  display: inline-block;
+  margin: 0 30px;
+  position: relative;
+}
+
+.navbar_item::after {
+  content: "";
+  height: 2px;
+  width: 0%;
+  background: #a87bcb;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  transition: 0.5s;
+}
+.navbar_item:hover::after {
+  width: 100%;
+}
+
+.navbar_item a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+.navbar_link--accent {
+  color: #a87bcb;
+}
+
+.navbar_link--active {
+  color: #a87bcb;
+}
+
+.menu_button {
+  display: none;
+  font-size: 35px;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

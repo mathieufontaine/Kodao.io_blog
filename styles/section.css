@@ -1,0 +1,21 @@
+.section {
+  background: #000000;
+  color: #ffffff;
+}
+
+.section--white {
+  background: #ffffff;
+  color: #000000;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 5% 8%;
+}
+
+.container--article {
+  max-width: 1000px;
+  width: 100%;
+}
