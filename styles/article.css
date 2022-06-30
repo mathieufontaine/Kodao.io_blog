@@ -40,7 +40,8 @@
 
 .article_h2 {
   padding: 20px 0;
-  font-weight: 400;
+  font-weight: 600;
+  color: var(--accent-color);
 }
 .article_h3 {
   padding: 20px 0;

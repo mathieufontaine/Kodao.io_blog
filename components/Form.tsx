@@ -1,39 +1,91 @@
-import React from "react";
+import { useState } from "react";
+import { useForm, SubmitHandler } from "react-hook-form";
 
-const Form = () => {
+const Form = ({ id, comments }) => {
+  const [submitted, setSubmitted] = useState(false);
+
+  interface IFormInput {
+    _id: string;
+    name: string;
+    email: string;
+    comment: string;
+  }
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit: SubmitHandler<IFormInput> = async (data) => {
+    console.log(JSON.stringify(data));
+    try {
+      const response = await fetch("/api/createComment", {
+        method: "POST",
+        body: JSON.stringify(data),
+      });
+      setSubmitted(true);
+    } catch (error) {
+      console.log(error);
+      setSubmitted(false);
+    }
+  };
+
   return (
-    <form className="form">
-      <label className="form_label">
-        <span className="form_span">Nom :</span>
-        <input
-          className="form_input"
-          placeholder="Mathieu Fontaine"
-          type="text"
-        />
-      </label>
-      <label className="form_label">
-        <span className="form_span">Email :</span>
-        <input
-          className="form_input"
-          placeholder="mathieu@kodao.io"
-          type="text"
-        />
-      </label>
-      <label className="form_label">
-        <span className="form_span">Commentaire :</span>
-        <textarea
-          placeholder="Web3 is amazing!"
-          className="form_input"
-          name=""
-          id=""
-          cols="90"
-          rows="8"
-        ></textarea>
-      </label>
-      <button className="button button--small" type="submit">
-        Envoyer
-      </button>
-    </form>
+    <>
+      {submitted ? (
+        <div className="form_success">
+          <h2>Comment Submitted!</h2>
+          <p>Once apporoved it will appear below</p>
+        </div>
+      ) : (
+        <form className="form" onSubmit={handleSubmit(onSubmit)}>
+          <input {...register("_id")} type="hidden" name="_id" value={id} />
+          <label className="form_label">
+            <span className="form_span">Nom :</span>
+            <input
+              {...register("name", { required: true })}
+              className="form_input"
+              placeholder="Mathieu Fontaine"
+              type="text"
+            />
+            {errors.name && (
+              <span className="form_error">- Le nom est requis</span>
+            )}
+          </label>
+          <label className="form_label">
+            <span className="form_span">Email :</span>
+            <input
+              {...register("email", { required: true })}
+              className="form_input"
+              placeholder="mathieu@kodao.io"
+              type="email"
+            />
+            {errors.email && (
+              <span className="form_error">- L'email est requis</span>
+            )}
+          </label>
+          <label className="form_label">
+            <span className="form_span">Commentaire :</span>
+            <textarea
+              {...register("comment", { required: true })}
+              placeholder="Web3 is amazing!"
+              className="form_input"
+              name="comment"
+              cols="90"
+              rows="8"
+            ></textarea>
+            {errors.comment && (
+              <span className="form_error">- Le commentaire est vide</span>
+            )}
+          </label>
+          <input
+            className="button button--small"
+            type="submit"
+            value="Envoyer"
+          />
+        </form>
+      )}
+    </>
   );
 };
 

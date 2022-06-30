@@ -1,7 +1,5 @@
 import { sanityClient, urlFor } from "../../client";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-import SinglePost from "../../components/SinglePost";
+import PostPage from "../../components/PostPage";
 import { GetStaticProps } from "next";
 import { Post } from "../../typings";
 
@@ -10,14 +8,7 @@ interface Props {
 }
 
 const Post = ({ post }: Props) => {
-  console.log(post);
-  return (
-    <div>
-      <Header />
-      <SinglePost post={post} />
-      <Footer />
-    </div>
-  );
+  return <PostPage post={post} />;
 };
 
 export default Post;
@@ -34,18 +25,19 @@ export const getStaticPaths = async () => {
 
   const paths = posts.map((post: Post) => ({
     params: {
-      slug: post.slug.current
-    }
+      slug: post.slug.current,
+    },
   }));
 
   return {
     paths,
-    fallback: "blocking"
+    fallback: "blocking",
   };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const query = `*[_type == "post" && slug.current == $slug][0]{
+        _id,
         title, 
         slug,
         publishedAt,
@@ -57,23 +49,28 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         body,
         "authorName":author->name,
         "authorImage": author->image,
+        "comments": *[
+          _type == "comment" && 
+          post._ref == ^._id &&
+          approved == true
+        ]
       }`;
 
   const post = await sanityClient.fetch(query, {
-    slug: params?.slug
+    slug: params?.slug,
   });
 
   if (!post) {
     return {
-      notFound: true
+      notFound: true,
     };
   }
 
   return {
     props: {
-      post
+      post,
     },
-    revalidate: 60 // update cached version every 60 secs
+    revalidate: 60, // update cached version every 60 secs
   };
 };
 

@@ -1,9 +1,7 @@
-import Link from "next/link";
 import Post from "./Post";
 import Cta from "./Cta";
-// import { Link } from "react-router-dom";
 
-const Blog = ({ posts }) => {
+const PostList = ({ posts }) => {
   return (
     <main className="blog">
       <section className="section">
@@ -54,4 +52,4 @@ const Blog = ({ posts }) => {
   );
 };
 
-export default Blog;
+export default PostList;

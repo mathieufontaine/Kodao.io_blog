@@ -13,9 +13,11 @@
   align-items: center;
   flex-direction: column;
   padding: 5% 8%;
+  margin: auto;
 }
 
 .container--article {
   max-width: 1000px;
   width: 100%;
+  align-items: flex-start;
 }
