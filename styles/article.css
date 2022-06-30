@@ -36,20 +36,23 @@
   width: 100%;
   padding: 20px;
   background: rgba(179, 179, 179, 0.1);
+  margin-bottom: 40px;
 }
 
 .article_h2 {
+  margin-top: 20px;
   padding: 20px 0;
   font-weight: 600;
   color: var(--accent-color);
 }
 .article_h3 {
+  margin-top: 10px;
   padding: 20px 0;
-  font-weight: 300;
+  font-weight: 600;
 }
 .article_h4 {
   padding: 20px 0;
-  font-weight: 300;
+  font-weight: 400;
 }
 .article_video {
   display: block;

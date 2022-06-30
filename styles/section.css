@@ -17,7 +17,8 @@
 }
 
 .container--article {
-  max-width: 1000px;
+  max-width: 1400px;
   width: 100%;
   align-items: flex-start;
+  padding: 3% 8%;
 }

@@ -20,6 +20,10 @@ const Post = ({ post }) => {
         {/* <div className="card_content"> */}
         <div className="card_content">
           <h4 className="card_title">{post.title}</h4>
+          <p className="card_text">
+            {post.excerpt}
+            <span className="card_more">Lire la suite..</span>
+          </p>
           <div className="card_infos">
             <div className="flex--column">
               <span className="card_date">
@@ -35,10 +39,6 @@ const Post = ({ post }) => {
               ))}
             </div>
           </div>
-          {/* <p className="card_text">
-          {post.excerpt}
-          <span className="card_more">Lire la suite..</span>
-        </p> */}
         </div>
       </div>
     </Link>

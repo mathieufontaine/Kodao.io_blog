@@ -75,9 +75,9 @@
   font-size: 1.3rem;
 }
 .card_text {
-  /* padding: 10px 20px; */
-  font-size: 1.1rem;
-  line-height: 2.2rem;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  line-height: 2rem;
   height: 100%;
   transition: 0.5s all ease;
 }
