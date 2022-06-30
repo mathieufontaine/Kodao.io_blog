@@ -8,46 +8,117 @@
  *    type: 'blockContent'
  *  }
  */
+import React from "react";
+import { FaPaperclip } from "react-icons/fa";
+import ExternalLinkRenderer from "./components/ExternalLinkRenderer";
+import getYoutubeId from "get-youtube-id";
+
+const highlightIcon = () => <span style={{ fontWeight: "bold" }}>H</span>;
+
+const highlightRender = (props) => (
+  <span style={{ backgroundColor: "#a87bcb" }}>{props.children}</span>
+);
+
+const YoutubePreview = ({ value }) => {
+  const id = getYoutubeId(value.url);
+  const url = `https://www.youtube.com/embed/${id}`;
+  if (!id) {
+    return <div>Missing Youtube URL</div>;
+  }
+  return (
+    <iframe
+      width="560"
+      height="315"
+      src={url}
+      title="YouTube Preview"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  );
+};
+
 export default {
-  title: 'Block Content',
-  name: 'blockContent',
-  type: 'array',
+  title: "Block Content",
+  name: "blockContent",
+  type: "array",
   of: [
     {
-      title: 'Block',
-      type: 'block',
+      title: "Block",
+      type: "block",
       // Styles let you set what your user can mark up blocks with. These
       // correspond with HTML tags, but you can set any title or value
       // you want and decide how you want to deal with it where you want to
       // use your content.
       styles: [
-        {title: 'Normal', value: 'normal'},
-        {title: 'H1', value: 'h1'},
-        {title: 'H2', value: 'h2'},
-        {title: 'H3', value: 'h3'},
-        {title: 'H4', value: 'h4'},
-        {title: 'Quote', value: 'blockquote'},
+        { title: "Normal", value: "normal" },
+        { title: "H1", value: "h1" },
+        { title: "H2", value: "h2" },
+        { title: "H3", value: "h3" },
+        { title: "H4", value: "h4" },
+        { title: "Quote", value: "blockquote" },
       ],
-      lists: [{title: 'Bullet', value: 'bullet'}],
+      lists: [
+        { title: "Bullet", value: "bullet" },
+        { title: "Numbered", value: "number" },
+        { title: "Hidden", value: "blockComment" },
+      ],
       // Marks let you mark up inline text in the block editor.
       marks: {
         // Decorators usually describe a single property – e.g. a typographic
         // preference or highlighting by editors.
         decorators: [
-          {title: 'Strong', value: 'strong'},
-          {title: 'Emphasis', value: 'em'},
+          { title: "Strong", value: "strong" },
+          { title: "Emphasis", value: "em" },
+          { title: "Code", value: "code" },
+          { title: "Underline", value: "underline" },
+          { title: "Strike", value: "strike-through" },
+          {
+            title: "Highlight",
+            value: "highlight",
+            blockEditor: {
+              icon: highlightIcon,
+              render: highlightRender,
+            },
+          },
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
           {
-            title: 'URL',
-            name: 'link',
-            type: 'object',
+            name: "link",
+            type: "object",
+            title: "URL",
+            blockEditor: {
+              render: ExternalLinkRenderer,
+            },
             fields: [
               {
-                title: 'URL',
-                name: 'href',
-                type: 'url',
+                title: "URL",
+                name: "href",
+                type: "url",
+              },
+              {
+                title: "Open in a new window",
+                name: "blank",
+                type: "boolean",
+              },
+            ],
+          },
+          {
+            name: "internalLink",
+            type: "object",
+            title: "Internal link",
+            blockEditor: {
+              icon: FaPaperclip,
+            },
+            fields: [
+              {
+                name: "reference",
+                type: "reference",
+                to: [
+                  { type: "post" },
+                  // other types you may want to link to
+                ],
               },
             ],
           },
@@ -58,8 +129,26 @@ export default {
     // primitive types such as 'string' and 'number' in the same array
     // as a block type.
     {
-      type: 'image',
-      options: {hotspot: true},
+      type: "image",
+      options: { hotspot: true },
+    },
+    {
+      name: "youtube",
+      type: "object",
+      title: "youtube Embed",
+      fields: [
+        {
+          name: "url",
+          type: "url",
+          title: "URL",
+        },
+      ],
+      preview: {
+        select: {
+          url: "url",
+        },
+        component: YoutubePreview,
+      },
     },
   ],
-}
+};
