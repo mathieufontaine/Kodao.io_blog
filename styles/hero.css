@@ -1,5 +1,6 @@
 .hero {
-  margin-top: 10vh;
+  padding-top: 10vh;
+  background: black;
 }
 
 .hero_img {

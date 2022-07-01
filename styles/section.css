@@ -19,6 +19,10 @@
   grid-template-columns: repeat(2, 1fr);
 }
 
+.section--blog {
+  padding-top: 10vh;
+}
+
 .container {
   display: flex;
   flex-direction: column;

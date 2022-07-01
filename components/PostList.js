@@ -4,8 +4,8 @@ import Image from "next/image";
 
 const PostList = ({ posts }) => {
   return (
-    <main className="blog">
-      <section className="section">
+    <div className="blog">
+      <section className="section section--blog">
         <div className="container">
           <div className="blog_text">
             <h1 className="blog_title">Kodao.io Blog</h1>
@@ -53,7 +53,7 @@ const PostList = ({ posts }) => {
         </div>
       </section> */}
       <Cta />
-    </main>
+    </div>
   );
 };
 
