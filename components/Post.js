@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 const Post = ({ post }) => {
-  console.log(post);
   return (
     <Link key={post._id} href={`/post/${post.slug.current}`}>
       <div className="card">

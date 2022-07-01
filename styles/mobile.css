@@ -30,22 +30,23 @@
   html {
     font-size: 9px;
   }
-  /* .container {
-    padding: 5%;
-  } */
+  .blog_text {
+    width: 100%;
+  }
+
   .hero_headings {
-    /* flex-direction: column;
-    align-items: flex-start; */
-    /* grid-gap: 20px; */
     padding: 20px 5%;
   }
 
   .article_video {
     width: 100%;
-    /* height: 250px; */
   }
   .card_wrapper {
     grid-template-columns: 1fr;
+  }
+
+  .section--grey {
+    border: none;
   }
   .comment_wrapper {
     width: 100%;

@@ -9,18 +9,18 @@ const PostList = ({ posts }) => {
         <div className="container">
           <div className="blog_text">
             <h1 className="blog_title">Kodao.io Blog</h1>
-            <h2 className="blog_subtitle">
-              Découvrez nos derniers articles sur le blog de Kodao consacré au
-              Web3.0 !
-            </h2>
             <Image
-              width="1000px"
-              height="80px"
-              layout="intrinsic"
+              width="1500px"
+              height="40px"
+              // layout="responsive"
               className="blog_line"
               src="/images/other/Ligne-purple.png"
               alt="web3 communities"
             />
+            <h2 className="blog_subtitle">
+              Découvrez nos derniers articles sur le blog de Kodao consacré au
+              Web3.0 !
+            </h2>
           </div>
         </div>
       </section>

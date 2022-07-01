@@ -6,7 +6,7 @@
 
 .blog_text {
   width: 60%;
-  margin: 20px auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,6 +16,7 @@
 .blog_title {
   text-align: center;
   font-weight: 800;
+  margin: 30px auto;
 }
 
 .blog_subtitle {
