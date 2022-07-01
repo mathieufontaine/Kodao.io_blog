@@ -15,6 +15,7 @@
   text-align: center;
   display: flex;
   align-items: center;
+  padding-top: 30px;
 }
 .author_img {
   border-radius: 50%;
