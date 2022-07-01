@@ -8,6 +8,7 @@ import { urlFor, config } from "../client";
 import PortableText from "react-portable-text";
 import Head from "next/head";
 import Comments from "./Comments";
+import Image from "next/image";
 
 const BlockRenderer = (props) => {
   const { style = "normal" } = props.node;
@@ -85,7 +86,10 @@ const SinglePost = ({ post }) => {
         {/* {!isLoading && post !== null && ( */}
         <article className="article">
           <header className="hero">
-            <img
+            <Image
+              // layout="responsive"
+              height="250px"
+              width="1500px"
               className="hero_img"
               src={urlFor(post.mainImage).url()}
               alt={post.title}
@@ -96,7 +100,10 @@ const SinglePost = ({ post }) => {
               <div className="article_headings">
                 <h1 className="article_title">{post.title}</h1>
                 <div className="author">
-                  <img
+                  <Image
+                    layout="intrinsic"
+                    height="50px"
+                    width="50px"
                     className="author_img"
                     src={urlFor(post.authorImage).url()}
                     alt={post.title}
@@ -147,7 +154,10 @@ const SinglePost = ({ post }) => {
                   Publié le {new Date(post.publishedAt).toLocaleDateString()}
                 </p>
                 <div className="author">
-                  <img
+                  <Image
+                    layout="intrinsic"
+                    height="50px"
+                    width="50px"
                     className="author_img"
                     src={urlFor(post.authorImage).url()}
                     alt={post.title}

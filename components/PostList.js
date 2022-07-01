@@ -14,6 +14,9 @@ const PostList = ({ posts }) => {
               Web3.0 !
             </h2>
             <Image
+              width="1000px"
+              height="80px"
+              layout="intrinsic"
               className="blog_line"
               src="/images/other/Ligne-purple.png"
               alt="web3 communities"

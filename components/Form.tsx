@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 
-const Form = ({ id, comments }) => {
+interface FormProps {
+  id: string;
+}
+
+const Form: React.FC<FormProps> = ({ id }) => {
   const [submitted, setSubmitted] = useState(false);
 
   interface IFormInput {

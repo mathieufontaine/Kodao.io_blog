@@ -34,26 +34,13 @@
   outline: none;
 }
 
+.form_error {
+  padding: 10px 0;
+  color: red;
+}
+
 textarea:focus,
 input:focus {
   outline: none;
   border: 2px solid var(--accent-color);
-}
-
-.comment {
-  margin: 5px 0 10px;
-}
-.comment_wrapper {
-  margin: 20px 0;
-  box-shadow: 5px 10px 35px rgb(0 0 0 / 30%);
-  align-self: flex-start;
-  padding: 20px;
-  width: 100%;
-}
-.comment_date {
-  font-size: x-small;
-}
-.comment_name {
-  color: var(--accent-color);
-  margin-right: 5px;
 }

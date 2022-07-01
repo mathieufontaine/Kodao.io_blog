@@ -8,6 +8,7 @@ import "../styles/blog.css";
 import "../styles/hero.css";
 import "../styles/article.css";
 import "../styles/form.css";
+import "../styles/comment.css";
 import "../styles/mobile.css";
 import "../styles/footer.css";
 import Layout from "../components/Layout";

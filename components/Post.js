@@ -11,6 +11,7 @@ const Post = ({ post }) => {
         <div className="card_header">
           {post.mainImage && (
             <Image
+              layout="fill"
               className="card_img"
               src={urlFor(post.mainImage).url()}
               alt={post.mainImage.alt}

@@ -12,6 +12,9 @@ const Header = () => {
         rel="noopener noreferrer"
       >
         <Image
+          width="180px"
+          height="80px"
+          layout="intrinsic"
           className="logo"
           src="/images/logo/logo-kodao.png"
           alt="logo kodao"
