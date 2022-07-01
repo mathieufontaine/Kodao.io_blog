@@ -45,7 +45,7 @@ const serializers = {
           title="YouTube Preview"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullscreen
+          allowFullScreen
         ></iframe>
       );
     },
@@ -55,7 +55,7 @@ const serializers = {
     highlight: ({ children }) => <mark>{children}</mark>,
     link: ({ children, mark }) =>
       mark.blank ? (
-        <a href={mark.href} target="_blank" rel="noopener noreferer">
+        <a href={mark.href} rel="noreferrer" target="_blank">
           {children}
         </a>
       ) : (
@@ -65,7 +65,7 @@ const serializers = {
       const { slug = {} } = mark;
       const href = `/blog/${slug.current}`;
       return (
-        <a href={href} target="_blank" rel="noopener noreferer">
+        <a href={href} rel="noreferrer" target="_blank">
           {children}
         </a>
       );

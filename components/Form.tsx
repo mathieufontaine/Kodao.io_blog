@@ -61,7 +61,7 @@ const Form = ({ id, comments }) => {
               type="email"
             />
             {errors.email && (
-              <span className="form_error">- L'email est requis</span>
+              <span className="form_error">- L&apos;email est requis</span>
             )}
           </label>
           <label className="form_label">

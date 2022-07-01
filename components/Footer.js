@@ -1,4 +1,4 @@
-import React from "react";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -9,19 +9,19 @@ const Footer = () => {
             <h4 className="col_heading">Kodao.io</h4>
             <ul>
               <li>
-                <a href="/">A propos</a>
+                <Link href="/">A propos</Link>
               </li>
               <li>
-                <a href="/">Nos services</a>
+                <Link href="/">Nos services</Link>
               </li>
               <li>
-                <a href="/">Mentions légales</a>
+                <Link href="/">Mentions légales</Link>
               </li>
               <li>
-                <a href="/">Gestion des cookies</a>
+                <Link href="/">Gestion des cookies</Link>
               </li>
               <li>
-                <a href="/">Données personnelles</a>
+                <Link href="/">Données personnelles</Link>
               </li>
             </ul>
           </div>
@@ -29,31 +29,31 @@ const Footer = () => {
             <h4 className="col_heading">News</h4>
             <ul>
               <li>
-                <a href="/">Collabs (à venir)</a>
+                <Link href="/">Collabs (à venir)</Link>
               </li>
               <li>
-                <a href="/">Blog</a>
+                <Link href="/">Blog</Link>
               </li>
               <li>
-                <a href="/">Nouveaux services</a>
+                <Link href="/">Nouveaux services</Link>
               </li>
             </ul>
           </div>
           <div className="footer_col">
             <h4 className="col_heading">Nous suivre</h4>
             <div className="social-links">
-              <a href="/">
+              <Link href="/">
                 <i className="fab fa-discord"></i>
-              </a>
-              <a href="/">
+              </Link>
+              <Link href="/">
                 <i className="fab fa-twitter"></i>
-              </a>
-              <a href="/">
+              </Link>
+              <Link href="/">
                 <i className="fab fa-instagram"></i>
-              </a>
-              <a href="/">
+              </Link>
+              <Link href="/">
                 <i className="fab fa-linkedin-in"></i>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

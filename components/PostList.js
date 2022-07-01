@@ -1,5 +1,6 @@
 import Post from "./Post";
 import Cta from "./Cta";
+import Image from "next/image";
 
 const PostList = ({ posts }) => {
   return (
@@ -12,7 +13,7 @@ const PostList = ({ posts }) => {
               Découvrez nos derniers articles sur le blog de Kodao consacré au
               Web3.0 !
             </h2>
-            <img
+            <Image
               className="blog_line"
               src="/images/other/Ligne-purple.png"
               alt="web3 communities"
@@ -24,7 +25,7 @@ const PostList = ({ posts }) => {
         <div className="container">
           {/* <h3 className="section_heading">Articles</h3> */}
           <div className="card_wrapper">
-            {posts?.map(post => (
+            {posts?.map((post) => (
               <Post key={post._id} post={post} />
             ))}
           </div>

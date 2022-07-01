@@ -1,5 +1,6 @@
 // import { NavLink } from "react-router-dom";
 import Link from "next/link";
+import Image from "next/image";
 
 const Header = () => {
   return (
@@ -10,7 +11,7 @@ const Header = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img
+        <Image
           className="logo"
           src="/images/logo/logo-kodao.png"
           alt="logo kodao"

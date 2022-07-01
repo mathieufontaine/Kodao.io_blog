@@ -1,6 +1,7 @@
 import React from "react";
 import { urlFor } from "../client";
 import Link from "next/link";
+import Image from "next/image";
 
 const Post = ({ post }) => {
   console.log(post);
@@ -9,7 +10,7 @@ const Post = ({ post }) => {
       <div className="card">
         <div className="card_header">
           {post.mainImage && (
-            <img
+            <Image
               className="card_img"
               src={urlFor(post.mainImage).url()}
               alt={post.mainImage.alt}
