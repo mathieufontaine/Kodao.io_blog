@@ -78,8 +78,8 @@ const Form: React.FC<FormProps> = ({ id }) => {
                 placeholder="Web3 is amazing!"
                 className="form_input"
                 name="comment"
-                cols="90"
-                rows="8"
+                cols={90}
+                rows={8}
               ></textarea>
               {errors.comment && (
                 <span className="form_error">- Le commentaire est vide</span>

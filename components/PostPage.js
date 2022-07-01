@@ -1,5 +1,3 @@
-import React, { useEffect, useState } from "react";
-// import { useParams } from "react-router-dom";
 import BlockContent from "@sanity/block-content-to-react";
 import Cta from "./Cta";
 import Form from "./Form";

@@ -1,4 +1,4 @@
-import React from "react";
+import Link from "next/link";
 
 const Cta = () => {
   return (
@@ -20,12 +20,12 @@ const Cta = () => {
             </p>
           </div>
           <div className="cta_btn">
-            <a href="#contact">
+            <Link href="/contact">
               <button className="button" type="button">
                 <div className="button_effect"></div>
                 <span className="button_text">En savoir plus</span>
               </button>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
