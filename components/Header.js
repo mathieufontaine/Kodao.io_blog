@@ -5,21 +5,24 @@ import Image from "next/image";
 const Header = () => {
   return (
     <header className="header">
-      <Link
+      {/* <Link
         className="logo_link"
         href="/"
         target="_blank"
         rel="noopener noreferrer"
-      >
-        <Image
-          width="180px"
-          height="80px"
-          layout="intrinsic"
-          className="logo"
-          src="/images/logo/logo-kodao.png"
-          alt="logo kodao"
-        />
-      </Link>
+      > */}
+      <Image
+        href="/"
+        target="_blank"
+        rel="noopener noreferrer"
+        width="180px"
+        height="80px"
+        layout="intrinsic"
+        className="logo"
+        src="/images/logo/logo-kodao.png"
+        alt="logo kodao"
+      />
+      {/* </Link> */}
       <nav className="navbar">
         <ul>
           <li className="navbar_item">

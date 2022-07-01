@@ -166,11 +166,7 @@ const SinglePost = ({ post }) => {
                 </div>
               </div>
               <hr className="article_line" />
-              <div className="form_container">
-                <h3 className="form_heading">Vous avez aimé cet article?</h3>
-                <h4 className="form_subheading">Laissez un commentaire !</h4>
-                <Form id={post._id} />
-              </div>
+              <Form id={post._id} />
               {post.comments && (
                 <>
                   <hr className="article_line" />

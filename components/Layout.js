@@ -4,7 +4,7 @@ import Head from "next/head";
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <>
       <Head>
         <title>Kodao.io Blog</title>
         <meta
@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
       <Header />
       <main>{children}</main>
       <Footer />
-    </div>
+    </>
   );
 };
 

@@ -2,7 +2,6 @@ const Comments = ({ comments }) => {
   return (
     <div className="comment_wrapper">
       <h3>Commentaires</h3>
-      {console.log(comments)}
       {comments.map((comment) => (
         <div className="comment" key={comment._id}>
           <p className="comment_date">
