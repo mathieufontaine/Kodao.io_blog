@@ -1,19 +1,14 @@
-/* articles */
-
 .card_wrapper {
-  /* display: flex;
-  flex-wrap: wrap; */
-  /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */
-  /* padding: 30px; */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
   margin: auto;
   max-width: 1200px;
+  width: 100%;
 }
 
 .card {
-  width: 310px;
+  width: 320px;
   box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   overflow: hidden;
@@ -30,13 +25,10 @@
 .card_header {
   position: relative;
   width: 100%;
-  height: 150px;
+  height: 180px;
   overflow: hidden;
 }
 .card_tags {
-  /* position: absolute; */
-  /* right: 5px;
-  top: 5px; */
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -59,20 +51,13 @@
 }
 
 .card_content {
-  padding: 10px;
+  padding: 20px;
 }
 .card_title {
-  /* position: absolute;
-  bottom: 0; */
-  /* text-align: center; */
-  /* width: 100%; */
-  /* padding: 10px 20px; */
-  /* background: rgba(0, 0, 0, 0.7); */
-  /* border-bottom: 4px solid var(--accent-color); */
   color: var(--primary-color);
-  line-height: 15px;
+  line-height: 25px;
   padding: 0 0 10px 0;
-  font-size: 1.3rem;
+  font-size: 1.8rem;
 }
 .card_text {
   margin-bottom: 10px;
@@ -93,14 +78,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* padding: 10px 20px; */
-  /* background: rgba(0, 0, 0, 0.15); */
   color: var(--primary-color);
 }
 
 .card_date {
 }
+
 .card_author {
   font-weight: 800;
-  /* color: var(--primary-color); */
 }

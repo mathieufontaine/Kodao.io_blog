@@ -26,7 +26,8 @@ const PostList = ({ posts }) => {
       </section>
       <section className="section section--white">
         <div className="container">
-          {/* <h3 className="section_heading">Articles</h3> */}
+          <h3 className="blog_heading">Derniers Articles</h3>
+          <hr className="blog_line" />
           <div className="card_wrapper">
             {posts?.map((post) => (
               <Post key={post._id} post={post} />

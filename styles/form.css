@@ -6,13 +6,16 @@
 }
 
 .form_container {
+  /* padding: 20px 30px; */
+  padding: 5% 8%;
   display: flex;
   align-items: center;
   flex-direction: column;
   margin: auto;
+  border-right: 1px solid var(--accent-color);
 }
 
-.form_heading {
+.form_subheading {
   color: var(--accent-color);
 }
 
@@ -27,11 +30,15 @@
   margin-top: 5px;
   display: block;
   border: none;
-  background: rgba(167, 167, 167, 0.1);
+  background: var(--secondary-color);
   width: 100%;
   max-width: 500px;
   padding: 10px;
   outline: none;
+}
+
+.form_input::placeholder {
+  color: rgb(183, 183, 183);
 }
 
 .form_error {

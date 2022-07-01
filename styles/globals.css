@@ -93,6 +93,5 @@ figure img {
 
 .flex--column {
   display: flex;
-  align-items: center;
   flex-direction: column;
 }

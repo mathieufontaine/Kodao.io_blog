@@ -1,17 +1,24 @@
 .comment {
   margin: 5px 0 10px;
+  display: flex;
+  gap: 20px;
 }
 .comment_wrapper {
-  margin: 20px 0;
-  box-shadow: 5px 10px 35px rgb(0 0 0 / 30%);
+  margin: auto;
   align-self: flex-start;
-  padding: 20px;
-  width: 100%;
+  /* padding: 20px 0 50px; */
+  padding: 5% 8%;
+
+  /* width: 70%; */
+  /* box-shadow: 5px 10px 35px rgb(0 0 0 / 30%); */
+  /* background: rgba(167, 167, 167, 0.1); */
 }
 .comment_date {
   font-size: x-small;
+  font-weight: 800;
 }
 .comment_name {
   color: var(--accent-color);
   margin-right: 5px;
+  font-weight: 800;
 }

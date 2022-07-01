@@ -1,3 +1,4 @@
+import React from "react";
 import BlockContent from "@sanity/block-content-to-react";
 import Cta from "./Cta";
 import Form from "./Form";
@@ -85,8 +86,8 @@ const SinglePost = ({ post }) => {
         <article className="article">
           <header className="hero">
             <Image
-              // layout="responsive"
-              height="250px"
+              layout="responsive"
+              height="350px"
               width="1500px"
               className="hero_img"
               src={urlFor(post.mainImage).url()}
@@ -147,7 +148,7 @@ const SinglePost = ({ post }) => {
                   }}
                 /> */}
               </div>
-              <div className="article_infos">
+              {/* <div className="article_infos">
                 <p className="article_date">
                   Publié le {new Date(post.publishedAt).toLocaleDateString()}
                 </p>
@@ -162,16 +163,21 @@ const SinglePost = ({ post }) => {
                   />
                   <p className="author_name">Par {post.authorName}</p>
                 </div>
-              </div>
-              <hr className="article_line" />
-              <Form id={post._id} />
-              {post.comments && (
-                <>
-                  <hr className="article_line" />
-                  <Comments comments={post.comments} />
-                </>
-              )}
+              </div> */}
             </div>
+          </section>
+          <section
+            className={`section section--grey ${
+              post.comments && "section--grid"
+            }`}
+          >
+            <Form id={post._id} />
+            {post.comments && (
+              <div>
+                {/* <hr className="article_line" /> */}
+                <Comments comments={post.comments} />
+              </div>
+            )}
           </section>
           <Cta />
         </article>
