@@ -21,10 +21,12 @@ const Cta = () => {
           </div>
           <div className="cta_btn">
             <Link href="/contact">
-              <button className="button" type="button">
-                <div className="button_effect"></div>
-                <span className="button_text">En savoir plus</span>
-              </button>
+              <a>
+                <button className="button" type="button">
+                  <div className="button_effect"></div>
+                  <span className="button_text">En savoir plus</span>
+                </button>
+              </a>
             </Link>
           </div>
         </div>

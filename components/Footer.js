@@ -1,4 +1,12 @@
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faDiscord,
+  faTwitter,
+  faInstagram,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 
 const Footer = () => {
   return (
@@ -9,19 +17,29 @@ const Footer = () => {
             <h4 className="col_heading">Kodao.io</h4>
             <ul>
               <li>
-                <Link href="/">A propos</Link>
+                <Link href="/">
+                  <a>A propos</a>
+                </Link>
               </li>
               <li>
-                <Link href="/">Nos services</Link>
+                <Link href="/">
+                  <a>Nos services</a>
+                </Link>
               </li>
               <li>
-                <Link href="/">Mentions légales</Link>
+                <Link href="/">
+                  <a>Mentions légales</a>
+                </Link>
               </li>
               <li>
-                <Link href="/">Gestion des cookies</Link>
+                <Link href="/">
+                  <a>Gestion des cookies</a>
+                </Link>
               </li>
               <li>
-                <Link href="/">Données personnelles</Link>
+                <Link href="/">
+                  <a>Données personnelles</a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -29,13 +47,19 @@ const Footer = () => {
             <h4 className="col_heading">News</h4>
             <ul>
               <li>
-                <Link href="/">Collabs (à venir)</Link>
+                <Link href="/">
+                  <a>Collabs (à venir)</a>
+                </Link>
               </li>
               <li>
-                <Link href="/">Blog</Link>
+                <Link href="/">
+                  <a>Blog</a>
+                </Link>
               </li>
               <li>
-                <Link href="/">Nouveaux services</Link>
+                <Link href="/">
+                  <a>Nouveaux services</a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -43,16 +67,24 @@ const Footer = () => {
             <h4 className="col_heading">Nous suivre</h4>
             <div className="social-links">
               <Link href="/">
-                <i className="fab fa-discord"></i>
+                <a>
+                  <FontAwesomeIcon icon={faDiscord} />
+                </a>
               </Link>
               <Link href="/">
-                <i className="fab fa-twitter"></i>
+                <a>
+                  <FontAwesomeIcon icon={faTwitter} />
+                </a>
               </Link>
               <Link href="/">
-                <i className="fab fa-instagram"></i>
+                <a>
+                  <FontAwesomeIcon icon={faInstagram} />
+                </a>
               </Link>
               <Link href="/">
-                <i className="fab fa-linkedin-in"></i>
+                <a>
+                  <FontAwesomeIcon icon={faLinkedin} />
+                </a>
               </Link>
             </div>
           </div>

@@ -8,29 +8,28 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 const Header = ({ menuOpen, setMenuOpen }) => {
   return (
     <header className="header">
-      {/* <Link
+      <Link
         className="logo_link"
         href="/"
         target="_blank"
         rel="noopener noreferrer"
-      > */}
-      <Image
-        href="/"
-        target="_blank"
-        rel="noopener noreferrer"
-        width="180px"
-        height="80px"
-        layout="intrinsic"
-        className="logo"
-        src="/images/logo/logo-kodao.png"
-        alt="logo kodao"
-      />
-      {/* </Link> */}
+      >
+        <a>
+          <Image
+            width="180px"
+            height="80px"
+            layout="intrinsic"
+            className="logo"
+            src="/images/logo/logo-kodao.png"
+            alt="logo kodao"
+          />
+        </a>
+      </Link>
       <nav className="navbar">
         <ul>
           <li className="navbar_item">
             <Link href="/" className="navbar_link navbar_link--active">
-              Blog
+              <a>Blog</a>
             </Link>
           </li>
           <li className="navbar_item">
@@ -39,7 +38,7 @@ const Header = ({ menuOpen, setMenuOpen }) => {
               id="nav-offer"
               className="navbar_link"
             >
-              Solutions
+              <a>Solutions</a>
             </Link>
           </li>
           <li className="navbar_item">
@@ -48,7 +47,7 @@ const Header = ({ menuOpen, setMenuOpen }) => {
               id="nav-contact"
               className="navbar_link"
             >
-              Contact
+              <a>Contact</a>
             </Link>
           </li>
         </ul>
@@ -64,12 +63,12 @@ const Header = ({ menuOpen, setMenuOpen }) => {
         <ul>
           <li className="menu_item">
             <Link href="/" id="nav-faq" className="menu_link">
-              Blog
+              <a>Blog</a>
             </Link>
           </li>
           <li className="menu_item">
             <Link href="/index.html#offer" id="nav-offer" className="menu_link">
-              Solutions
+              <a>Solutions</a>
             </Link>
           </li>
           <li className="menu_item">
@@ -78,7 +77,7 @@ const Header = ({ menuOpen, setMenuOpen }) => {
               id="nav-contact"
               className="menu_link"
             >
-              Contact
+              <a>Contact</a>
             </Link>
           </li>
         </ul>
