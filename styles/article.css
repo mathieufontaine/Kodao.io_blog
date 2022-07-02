@@ -3,6 +3,8 @@
 
 .article_content {
   padding-bottom: 30px;
+  text-align: justify;
+  width: 100%;
 }
 
 .article_title {

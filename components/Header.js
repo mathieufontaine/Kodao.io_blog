@@ -1,8 +1,11 @@
 // import { NavLink } from "react-router-dom";
 import Link from "next/link";
 import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 
-const Header = () => {
+const Header = ({ menuOpen, setMenuOpen }) => {
   return (
     <header className="header">
       {/* <Link
@@ -50,10 +53,14 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-      <div className="menu_button">
-        <i className="menu_icon fa-solid fa-bars"></i>
+      <div className="menu_button" onClick={() => setMenuOpen(!menuOpen)}>
+        {menuOpen ? (
+          <FontAwesomeIcon icon={faXmark} />
+        ) : (
+          <FontAwesomeIcon icon={faBars} />
+        )}
       </div>
-      <nav className="menu">
+      <nav className={`menu ${menuOpen && "menu--open"}`}>
         <ul>
           <li className="menu_item">
             <Link href="/" id="nav-faq" className="menu_link">

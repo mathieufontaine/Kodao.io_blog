@@ -48,6 +48,12 @@
   width: 200px;
   transition: all 0.5s ease-in-out;
 }
+
+.menu--open {
+  display: flex;
+  right: 0;
+}
+
 .menu_item {
   padding: 20px 0;
 }
@@ -89,6 +95,11 @@
   display: inline-block;
   margin: 0 30px;
   position: relative;
+}
+
+.menu_item a {
+  color: var(--secondary-color);
+  font-size: 2rem;
 }
 
 .navbar_item::after {

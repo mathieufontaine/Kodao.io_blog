@@ -24,6 +24,12 @@
   .cta_btn {
     justify-content: flex-start;
   }
+  .navbar {
+    display: none;
+  }
+  .menu_button {
+    display: block;
+  }
 }
 
 @media (max-width: 650px) {

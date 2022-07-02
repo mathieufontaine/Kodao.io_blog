@@ -1,8 +1,11 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Head from "next/head";
+import React, { useState } from "react";
 
 const Layout = ({ children }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <>
       <Head>
@@ -13,8 +16,8 @@ const Layout = ({ children }) => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
-      <main>{children}</main>
+      <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <main onClick={() => setMenuOpen(false)}>{children}</main>
       <Footer />
     </>
   );
