@@ -5,36 +5,42 @@ import Image from "next/image";
 
 const Post = ({ post }) => {
   return (
-    <Link key={post._id} href={`/post/${post.slug.current}`}>
-      <div className="card">
-        <div className="card_header">
+    <Link key={post._id} href={`/post/${post.slug?.current}`}>
+      <div
+        className="bg-white shadow rounded-md overflow-hidden cursor-pointer 
+      transition ease-in-out mx-auto hover:shadow-4xl group"
+      >
+        <div className="relative pb-1/2 group-hover:scale-105 transition">
           {post.mainImage && (
+            // <div className="relative hover:scale-110">
             <Image
               layout="fill"
-              className="card_img"
+              objectFit="cover"
               src={urlFor(post.mainImage).url()}
               alt={post.mainImage.alt}
             />
+            // </div>
           )}
-          {/* <h4 className="card_title">{post.title}</h4> */}
         </div>
-        {/* <div className="card_content"> */}
-        <div className="card_content">
-          <h4 className="card_title">{post.title}</h4>
-          <p className="card_text">
+        <div className="relative p-8 z-10 overflow-hidden">
+          <h4 className="text-xlg leading-relaxed py-0">{post.title}</h4>
+          <p className="my-3 text-lg leading-loose">
             {post.excerpt}
-            <span className="card_more">Lire la suite..</span>
+            <span className="text-gray-400 p-3">Lire la suite..</span>
           </p>
-          <div className="card_infos">
-            <div className="flex--column">
-              <span className="card_date">
+          <div className="flex items-center justify-between">
+            <div className="py-3">
+              <span className="block">
                 {new Date(post.publishedAt).toLocaleDateString()}
               </span>
-              <span className="card_author">{post.authorName}</span>
+              <span className="black font-bold">{post.authorName}</span>
             </div>
-            <div className="card_tags">
+            <div className="flex justify-end text-white">
               {post.categories?.map((tag, index) => (
-                <div key={index} className="card_tag">
+                <div
+                  key={index}
+                  className="bg-accent rounded-md p-3 text-center ml-3"
+                >
                   {tag}
                 </div>
               ))}

@@ -14,9 +14,18 @@ const BlockRenderer = (props) => {
 
   if (/^h\d/.test(style)) {
     const level = style.replace(/[^\d]/g, "");
+    console.log(level);
+    let classNames;
+    if (level === "2") {
+      classNames = "mt-5 py-5 font-semibold text-accent";
+    } else if (level === "3") {
+      classNames = "mt-3 py-5 font-semibold";
+    } else if (level === "4") {
+      classNames = "p-5 font-base";
+    }
     return React.createElement(
       style,
-      { className: `article_h${level}` },
+      { className: `${classNames}` },
       props.children
     );
   }
@@ -40,7 +49,7 @@ const serializers = {
       }
       return (
         <iframe
-          className="article_video"
+          className="block w-[500px] h-[400px] mx-auto"
           src={url}
           title="YouTube Preview"
           frameBorder="0"
@@ -83,45 +92,45 @@ const SinglePost = ({ post }) => {
       </Head>
       <main>
         {/* {!isLoading && post !== null && ( */}
-        <article className="article">
-          <header className="hero">
-            <Image
-              layout="responsive"
-              height="350px"
-              width="1500px"
-              className="hero_img"
-              src={urlFor(post.mainImage).url()}
-              alt={post.title}
-            />
+        <article>
+          <header className="pt-[10vh] border-b-4 border-accent ">
+            <div className="relative pb-1/3 lg:pb-1/4 w-full">
+              <Image
+                layout="fill"
+                objectFit="cover"
+                src={urlFor(post.mainImage).url()}
+                alt={post.title}
+              />
+            </div>
           </header>
-          <section className="section section--white">
-            <div className="container container--article">
-              <div className="article_headings">
-                <h1 className="article_title">{post.title}</h1>
-                <div className="author">
-                  <Image
-                    layout="intrinsic"
-                    height="50px"
-                    width="50px"
-                    className="author_img"
-                    src={urlFor(post.authorImage).url()}
-                    alt={post.title}
-                  />
+          <section className="bg-white text-black">
+            <div className="container lg:max-w-[1200px]">
+              <div>
+                <h1 className="text-left font-bold">{post.title}</h1>
+                <div className="flex items-center py-10 gap-3">
+                  <div className="relative w-20 h-20 rounded-full overflow-hidden">
+                    <Image
+                      layout="fill"
+                      objectFit="cover"
+                      src={urlFor(post.authorImage).url()}
+                      alt={post.title}
+                    />
+                  </div>
+
                   <p>
-                    <span className="author_name">Par {post.authorName}</span>
-                    <span className="author_date">
+                    <span className="font-bold">Par {post.authorName}</span>
+                    <span className="ml-2">
                       le {new Date(post.publishedAt).toLocaleDateString()}
                     </span>
                   </p>
                 </div>
               </div>
-              <div className="article_content">
+              <div className="pb-10 text-justify">
                 <BlockContent
                   blocks={post.body}
                   projectId={config.projectId}
                   dataset="production"
                   serializers={serializers}
-                  // imageOptions={{ w: "auto", h: "300px", fit: "max" }}
                 />
                 {/* <PortableText
                   projectId={config.projectId}
@@ -148,32 +157,16 @@ const SinglePost = ({ post }) => {
                   }}
                 /> */}
               </div>
-              {/* <div className="article_infos">
-                <p className="article_date">
-                  Publié le {new Date(post.publishedAt).toLocaleDateString()}
-                </p>
-                <div className="author">
-                  <Image
-                    layout="intrinsic"
-                    height="50px"
-                    width="50px"
-                    className="author_img"
-                    src={urlFor(post.authorImage).url()}
-                    alt={post.title}
-                  />
-                  <p className="author_name">Par {post.authorName}</p>
-                </div>
-              </div> */}
             </div>
           </section>
           <section
-            className={`section section--grey ${
-              post.comments && "section--grid"
+            className={`bg-gray-100 mx-auto xl:max-w-screen-xl ${
+              post.comments && "grid grid-cols-1 lg:grid-cols-2"
             }`}
           >
             <Form id={post._id} />
             {post.comments && (
-              <div>
+              <div className="container">
                 {/* <hr className="article_line" /> */}
                 <Comments comments={post.comments} />
               </div>

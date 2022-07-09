@@ -3,32 +3,37 @@ import Cta from "./Cta";
 import Image from "next/image";
 
 const PostList = ({ posts }) => {
+  console.log(posts);
   return (
-    <div className="blog">
-      <section className="section section--blog">
+    <div className="color-black">
+      <section className="bg-black pt-[10vh]">
         <div className="container">
-          <div className="blog_text">
-            <h1 className="blog_title">Kodao.io Blog</h1>
-            <Image
-              width="1500px"
-              height="40px"
-              // layout="responsive"
-              className="blog_line"
-              src="/images/other/Ligne-purple.png"
-              alt="web3 communities"
-            />
-            <h2 className="blog_subtitle">
+          <div className="text-white w-2/3 flex flex-col items-center justify-center mx-auto">
+            <h1 className="">Kodao.io Blog</h1>
+            <div className="relative w-full h-5 my-5">
+              <Image
+                layout="fill"
+                // layout="responsive"
+                className="blog_line"
+                src="/images/other/Ligne-purple.png"
+                alt="web3 communities"
+              />
+            </div>
+            <h2 className="uppercase text-3xl text-center leading-relaxed font-bold py-4 ">
               Découvrez nos derniers articles sur le blog de Kodao consacré au
               Web3.0 !
             </h2>
           </div>
         </div>
       </section>
-      <section className="section section--white">
+      <section className="bg-white">
         <div className="container">
-          <h3 className="blog_heading">Derniers Articles</h3>
-          <hr className="blog_line" />
-          <div className="card_wrapper">
+          <h3 className="py-0">Derniers Articles</h3>
+          <hr className="w-full h-1 my-5 mx-auto bg-accent" />
+          <div
+            className="mt-3 pt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 
+          mx-auto w-full"
+          >
             {posts?.map((post) => (
               <Post key={post._id} post={post} />
             ))}
