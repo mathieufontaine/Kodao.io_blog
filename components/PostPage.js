@@ -94,7 +94,7 @@ const SinglePost = ({ post }) => {
         {/* {!isLoading && post !== null && ( */}
         <article>
           <header className="pt-[10vh] border-b-4 border-accent ">
-            <div className="relative pb-1/3 lg:pb-1/4 w-full">
+            <div className="relative pb-1/3 md:pb-1/4 lg:pb-1/6 w-full">
               <Image
                 layout="fill"
                 objectFit="cover"
@@ -159,18 +159,21 @@ const SinglePost = ({ post }) => {
               </div>
             </div>
           </section>
+          {console.log(post.comments)}
           <section
-            className={`bg-gray-100 mx-auto xl:max-w-screen-xl ${
-              post.comments && "grid grid-cols-1 lg:grid-cols-2"
+            className={`bg-gray-100 ${
+              post.comments?.length > 0 && "grid grid-cols-1 lg:grid-cols-2"
             }`}
           >
-            <Form id={post._id} />
-            {post.comments && (
-              <div className="container">
-                {/* <hr className="article_line" /> */}
-                <Comments comments={post.comments} />
-              </div>
-            )}
+            <div className="mx-auto xl:max-w-screen-xl">
+              <Form id={post._id} />
+              {post.comments?.length > 0 && (
+                <div className="container">
+                  {/* <hr className="article_line" /> */}
+                  <Comments comments={post.comments} />
+                </div>
+              )}
+            </div>
           </section>
           <Cta />
         </article>

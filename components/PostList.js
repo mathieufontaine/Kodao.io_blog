@@ -8,18 +8,19 @@ const PostList = ({ posts }) => {
     <div className="color-black">
       <section className="bg-black pt-[10vh]">
         <div className="container">
-          <div className="text-white w-2/3 flex flex-col items-center justify-center mx-auto">
+          <div className="text-white w-3/4 lg:w-2/3 xl:w-1/2 flex flex-col items-center justify-center mx-auto">
             <h1 className="">Kodao.io Blog</h1>
-            <div className="relative w-full h-5 my-5">
+            <div className="relative w-full h-10 my-5">
               <Image
                 layout="fill"
+                objectFit="contain"
                 // layout="responsive"
                 className="blog_line"
                 src="/images/other/Ligne-purple.png"
                 alt="web3 communities"
               />
             </div>
-            <h2 className="uppercase text-3xl text-center leading-relaxed font-bold py-4 ">
+            <h2 className="uppercase text-2xl text-center leading-relaxed font-bold py-4 ">
               Découvrez nos derniers articles sur le blog de Kodao consacré au
               Web3.0 !
             </h2>
@@ -31,7 +32,7 @@ const PostList = ({ posts }) => {
           <h3 className="py-0">Derniers Articles</h3>
           <hr className="w-full h-1 my-5 mx-auto bg-accent" />
           <div
-            className="mt-3 pt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 
+            className="mt-3 pt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 
           mx-auto w-full"
           >
             {posts?.map((post) => (

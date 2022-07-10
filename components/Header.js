@@ -9,23 +9,24 @@ const Header = ({ menuOpen, setMenuOpen }) => {
   return (
     <header
       className="text-white fixed bg-black bg-opacity-80 h-[10vh] top-0 w-full 
-      flex z-10 items-center justify-between py-8 px-10 border-b-2 border-white"
+      flex z-10 items-center justify-between py-8 px-12 border-b-2 border-white"
     >
       <Link href="/" target="_blank" rel="noopener noreferrer">
         <a>
-          <Image
-            width="180px"
-            height="80px"
-            layout="intrinsic"
-            src="/images/logo/logo-kodao.png"
-            alt="logo kodao"
-          />
+          <div className="relative h-20 w-40">
+            <Image
+              layout="fill"
+              objectFit="contain"
+              src="/images/logo/logo-white.svg"
+              alt="logo kodao"
+            />
+          </div>
         </a>
       </Link>
       <nav className="hidden md:block">
         <ul className="flex">
           <li
-            className="relative hover:after:w-full mx-6 text-3xl after:content:[''] after:w-0 after:h-1 after:bg-accent 
+            className="relative hover:after:w-full mx-6 text-xl uppercase after:content:[''] after:w-0 after:h-1 after:bg-accent 
           after:absolute after:bottom-[-10px] after:left-0 after:transition-all"
           >
             <Link href="/" className="navbar_link navbar_link--active">
@@ -33,7 +34,7 @@ const Header = ({ menuOpen, setMenuOpen }) => {
             </Link>
           </li>
           <li
-            className="relative hover:after:w-full mx-6 text-3xl after:content:[''] after:w-0 after:h-1 after:bg-accent 
+            className="relative hover:after:w-full mx-6 text-xl uppercase after:content:[''] after:w-0 after:h-1 after:bg-accent 
             after:absolute after:bottom-[-10px] after:left-0 after:transition-all"
           >
             <Link
@@ -45,7 +46,7 @@ const Header = ({ menuOpen, setMenuOpen }) => {
             </Link>
           </li>
           <li
-            className="relative hover:after:w-full mx-6 text-3xl after:content:[''] after:w-0 after:h-1 after:bg-accent 
+            className="relative hover:after:w-full mx-6 text-xl uppercase after:content:[''] after:w-0 after:h-1 after:bg-accent 
             after:absolute after:bottom-[-10px] after:left-0 after:transition-all"
           >
             <Link
@@ -74,7 +75,7 @@ const Header = ({ menuOpen, setMenuOpen }) => {
       >
         <ul>
           <li
-            className="relative hover:after:w-full mx-6 mt-20  text-3xl after:content:[''] after:w-0 after:h-1 after:bg-accent 
+            className="relative hover:after:w-full mx-6 mt-20  text-xl uppercase after:content:[''] after:w-0 after:h-1 after:bg-accent 
             after:absolute after:bottom-[-10px] after:left-0 after:transition-all"
           >
             <Link href="/" id="nav-faq" className="menu_link">
@@ -82,7 +83,7 @@ const Header = ({ menuOpen, setMenuOpen }) => {
             </Link>
           </li>
           <li
-            className="relative hover:after:w-full mx-6 mt-20 text-3xl after:content:[''] after:w-0 after:h-1 after:bg-accent 
+            className="relative hover:after:w-full mx-6 mt-20 text-xl uppercase after:content:[''] after:w-0 after:h-1 after:bg-accent 
             after:absolute after:bottom-[-10px] after:left-0 after:transition-all"
           >
             <Link href="/index.html#offer" id="nav-offer" className="menu_link">
@@ -90,7 +91,7 @@ const Header = ({ menuOpen, setMenuOpen }) => {
             </Link>
           </li>
           <li
-            className="relative hover:after:w-full mx-6 mt-20 text-3xl after:content:[''] after:w-0 after:h-1 after:bg-accent 
+            className="relative hover:after:w-full mx-6 mt-20 text-xl uppercase after:content:[''] after:w-0 after:h-1 after:bg-accent 
             after:absolute after:bottom-[-10px] after:left-0 after:transition-all"
           >
             <Link

@@ -14,7 +14,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 10px;
+  font-size: 14px;
 }
 
 :root {
@@ -29,6 +29,7 @@ a {
   text-decoration: none;
   color: var(--accent-color);
   font-weight: 800;
+  /* font-size: 1.4rem; */
 }
 
 a.anchor {
@@ -45,32 +46,32 @@ img {
 
 h1 {
   font-weight: 400;
-  font-size: 3.8rem;
+  font-size: 3rem;
   text-align: center;
 }
 
 h2 {
-  font-size: 2.6rem;
+  font-size: 2.2rem;
   padding-bottom: 20px;
   text-align: left;
 }
 
 h3 {
   font-weight: bold;
-  font-size: 2rem;
+  font-size: 1.6rem;
   padding-bottom: 20px;
 }
 
 h4 {
   font-weight: bold;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   padding-bottom: 10px;
 }
 
 p,
 li {
   font-weight: 100;
-  font-size: 1.4rem;
+  /* font-size: 1.4rem; */
   line-height: 26px;
 }
 
@@ -96,6 +97,6 @@ input:focus {
 }
 
 .container {
-  padding: 30px 6%;
+  padding: 40px 6%;
   max-width: 1400px;
 }
