@@ -1,15 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   font-family: Poppins;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  -webkit-user-select: none;
-  -webkit-touch-callout: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 html {
@@ -29,7 +25,6 @@ a {
   text-decoration: none;
   color: var(--accent-color);
   font-weight: 800;
-  /* font-size: 1.4rem; */
 }
 
 a.anchor {
@@ -71,7 +66,6 @@ h4 {
 p,
 li {
   font-weight: 100;
-  /* font-size: 1.4rem; */
   line-height: 26px;
 }
 
@@ -99,4 +93,23 @@ input:focus {
 .container {
   padding: 40px 6%;
   max-width: 1400px;
+}
+
+.btn {
+  @apply inline-block cursor-pointer rounded-2xl overflow-hidden bg-accent border-accent border-2 
+  text-lg text-white px-10 py-6 rounded-lg shadow-lg font-semibold;
+}
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.btn:hover {
+  @apply bg-transparent text-accent;
+}
+.btn:focus {
+  @apply outline-none;
+}
+.btn:active {
+  @apply bg-accent;
 }
