@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 const Post = ({ post }) => {
-  console.log(post);
   return (
     <Link key={post._id} href={`/post/${post.slug?.current}`}>
       <div
@@ -22,28 +21,42 @@ const Post = ({ post }) => {
           </div>
         )}
         <div className="relative p-8 z-10 overflow-hidden">
-          <h4 className="leading-relaxed py-0">{post.title}</h4>
-          <p className="my-3 text-sm leading-loose">
-            {post.excerpt}
-            <span className="text-gray-400 p-3">Read more..</span>
-          </p>
           <div className="flex items-center justify-between">
-            <div className="py-3 text-sm">
-              <span className="block">
-                {new Date(post.publishedAt).toLocaleDateString()}
-              </span>
-              <span className="black font-bold">{post.authorName}</span>
-            </div>
-            <div className="flex justify-end text-white">
+            <div className="flex justify-end text-white gap-2">
               {post.categories?.map((tag, index) => (
                 <div
                   key={index}
-                  className="bg-accent rounded-md p-2 text-sm text-center ml-3"
+                  className="bg-accent rounded-md p-2 text-sm text-center"
                 >
                   {tag}
                 </div>
               ))}
             </div>
+            <div className="black">
+              {new Date(post.publishedAt).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
+            </div>
+          </div>
+
+          <h4 className="text-2xl leading-relaxed mt-4">{post.title}</h4>
+          {/* <p className="my-3 text-sm leading-loose">
+            {post.excerpt}
+            <span className="text-gray-400 p-3">Read more..</span>
+          </p> */}
+
+          <div className="flex items-center">
+            <div className="relative w-10 h-10 mr-4 rounded-full overflow-hidden">
+              <Image
+                layout="fill"
+                objectFit="cover"
+                src={urlFor(post.authorImage).url()}
+                alt={post.authorName}
+              />
+            </div>
+            <span className="black ont-bold">{post.authorName}</span>
           </div>
         </div>
       </div>

@@ -1,40 +1,93 @@
 import Post from "./Post";
 import Cta from "./Cta";
 import Image from "next/image";
+import React, { useEffect, useState } from "react";
+
+const categories = [
+  "All Articles",
+  "Opinion & Insights",
+  "Case Studies",
+  "Guides & Tutorials",
+];
 
 const PostList = ({ posts }) => {
-  console.log(posts);
+  const [title, setTitle] = useState("All Articles");
+  const [filteredPosts, setFilteredPosts] = useState([]);
+
+  useEffect(() => {
+    setFilteredPosts(posts);
+  }, [posts]);
+
+  const filterCategories = (element) => {
+    setTitle(element);
+    if (element === "All Articles") {
+      setFilteredPosts(posts);
+      return;
+    }
+    const postsArray = posts.filter(
+      (post) => post.categories.findIndex((cat) => cat === element) !== -1
+    );
+    console.log(postsArray);
+    setFilteredPosts(postsArray);
+  };
+
   return (
-    <div className="color-black">
-      <section className="bg-black py-6">
-        <div className="container">
+    <div className="color-black pt-[10vh] md:pt-0">
+      <section className="relative bg-gradient-to-r from-[#330656] to-black py-6">
+        {/* <div className="absolute w-full h-full top-0 left-0 ">
+          <Image
+            layout="fill"
+            objectFit="cover"
+            src="/images/background/kodao_main.jpeg"
+            alt="kodao background"
+          />
+        </div> */}
+        <div className="container relative z-10">
           <div className="text-white w-3/4 lg:w-2/3 2xl:w-1/2 flex flex-col items-center justify-center mx-auto">
-            <h1 className="">Kodao.io Blog</h1>
-            <div className="relative w-full h-10 my-5">
+            <h1 className="text-4xl lg:text-6xl">Kodao.io Blog</h1>
+            <div className="relative w-full h-10 my-3">
               <Image
                 layout="fill"
                 objectFit="contain"
-                // layout="responsive"
                 className="blog_line"
                 src="/images/other/Ligne-purple.png"
                 alt="web3 communities"
               />
             </div>
-            <h2 className="uppercase text-2xl text-center leading-relaxed font-bold py-4 ">
-              Check out our latest articles on Kodao&apos;s Web3.0 blog!
+            <h2 className="text-2xl lg:text-3xl text-center leading-relaxed font-bold">
+              Exploring Blockchain & NFT technologies and the future of Web3
             </h2>
           </div>
         </div>
       </section>
       <section className="bg-white">
+        <div className="max-w-[1400px] pt-4 px-[6%] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-4 w-full items-center text-center">
+            {categories.map((cat, index) => (
+              <div
+                key={index}
+                className="cursor-pointer"
+                onClick={() => filterCategories(cat)}
+              >
+                <h4 className="text-xl px-8 py-4 hover:text-accent">{cat}</h4>
+                <hr
+                  className={`mt-2 mx-auto ${
+                    cat === title ? "h-1 bg-accent mx-2" : "h-1 bg-gray-200"
+                  }`}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="bg-white">
         <div className="container">
-          <h3 className="py-0">Last Articles</h3>
-          <hr className="w-full h-1 my-5 mx-auto bg-accent" />
+          {title && <h3>{title}</h3>}
           <div
             className="mt-3 pt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 
           mx-auto w-full"
           >
-            {posts?.map((post) => (
+            {filteredPosts?.map((post) => (
               <Post key={post._id} post={post} />
             ))}
           </div>

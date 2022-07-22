@@ -24,6 +24,7 @@ export const getStaticProps: GetStaticProps = async () => {
     publishedAt,
     "categories": categories[]->title,
     "authorName":author->name,
+    "authorImage": author->image
    }`;
 
   const posts = await sanityClient.fetch(query);

@@ -111,7 +111,6 @@ const SinglePost = ({ post }) => {
       <Head>
         <title>Kodao.io Blog - {post.title}</title>
         <meta name="description" content={post.excerpt} />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
         {/* {!isLoading && post !== null && ( */}

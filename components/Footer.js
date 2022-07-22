@@ -22,20 +22,27 @@ const Footer = () => {
             </h4>
             <ul>
               <li>
-                <Link href="https://www.kodao.io">
+                <Link href="https://www.kodao.io/concept">
                   <a className="text-black font-thin my-2 hover:text-accent">
-                    A propos
+                    Concept
                   </a>
                 </Link>
               </li>
               <li>
                 <Link href="https://www.kodao.io/solutions">
                   <a className="text-black font-thin my-2 hover:text-accent">
-                    Nos solutions
+                    Solutions
                   </a>
                 </Link>
               </li>
               <li>
+                <Link href="https://www.kodao.io/contact">
+                  <a className="text-black font-thin my-2 hover:text-accent">
+                    Contact
+                  </a>
+                </Link>
+              </li>
+              {/* <li>
                 <Link href="/">
                   <a className="text-black font-thin my-2 hover:text-accent">
                     Mentions légales
@@ -55,7 +62,7 @@ const Footer = () => {
                     Données personnelles
                   </a>
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
           <div className="my-5">
@@ -76,14 +83,14 @@ const Footer = () => {
               <li>
                 <Link href="/">
                   <a className="text-black font-thin my-2 hover:text-accent">
-                    Collabs (à venir)
+                    Collabs (soon)
                   </a>
                 </Link>
               </li>
               <li>
                 <Link href="/">
                   <a className="text-black font-thin my-2 hover:text-accent">
-                    Nouveaux services (à venir)
+                    New services (soon)
                   </a>
                 </Link>
               </li>
@@ -94,7 +101,7 @@ const Footer = () => {
               className="mb-8 relative after:w-1/2 text-2xl after:content:[''] after:h-1 after:bg-accent 
               after:absolute after:bottom-[-5px] after:left-1/2 after:translate-x-[-50%] md:after:left-0  md:after:translate-x-0"
             >
-              Nous suivre
+              Follow Us
             </h4>
             <div className="flex md:grid md:grid-cols-2 gap-2 justify-center items-center">
               <Link href="https://discord.gg/BXtp6szz7C">
