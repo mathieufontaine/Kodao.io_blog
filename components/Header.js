@@ -11,22 +11,16 @@ const Header = ({ menuOpen, setMenuOpen }) => {
       className="text-white bg-black h-[10vh] top-0 w-full 
       flex z-10 items-center justify-between py-8 px-12 border-b-2 border-white"
     >
-      <Link
-        href="https://www.kodao.io"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <a>
-          <div className="relative h-20 w-40">
-            <Image
-              layout="fill"
-              objectFit="contain"
-              src="/images/logo/logo-white.svg"
-              alt="logo kodao"
-            />
-          </div>
-        </a>
-      </Link>
+      <a href="https://www.kodao.io" target="_blank" rel="noopener noreferrer">
+        <div className="relative h-20 w-40">
+          <Image
+            layout="fill"
+            objectFit="contain"
+            src="/images/logo/logo-white.svg"
+            alt="logo kodao"
+          />
+        </div>
+      </a>
       <nav className="hidden md:block">
         <ul className="flex">
           <li
@@ -41,25 +35,29 @@ const Header = ({ menuOpen, setMenuOpen }) => {
             className="relative hover:after:w-full mx-6 text-xl uppercase after:content:[''] after:w-0 after:h-1 after:bg-accent 
             after:absolute after:bottom-[-10px] after:left-0 after:transition-all"
           >
-            <Link
+            <a
               href="https://www.kodao.io/solutions"
-              id="nav-offer"
-              className="navbar_link"
+              id="nav-contact"
+              className="navbar_link text-white"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <a className="text-white">Solutions</a>
-            </Link>
+              Solutions
+            </a>
           </li>
           <li
             className="relative hover:after:w-full mx-6 text-xl uppercase after:content:[''] after:w-0 after:h-1 after:bg-accent 
             after:absolute after:bottom-[-10px] after:left-0 after:transition-all"
           >
-            <Link
+            <a
               href="https://www.kodao.io/contact"
               id="nav-contact"
-              className="navbar_link"
+              className="navbar_link text-white"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <a className="text-white">Contact</a>
-            </Link>
+              Contact
+            </a>
           </li>
         </ul>
       </nav>
@@ -74,7 +72,7 @@ const Header = ({ menuOpen, setMenuOpen }) => {
         )}
       </button>
       <nav
-        className={`absolute pb-10 px-5 h-[90vh] right-[-100%] top-[10vh] z-10 bg-black bg-opacity-80 
+        className={`md:hidden absolute pb-10 px-5 h-[90vh] right-[-100%] top-[10vh] z-10 bg-black bg-opacity-80 
       transition-all ${menuOpen && "block right-0"}`}
       >
         <ul>

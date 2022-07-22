@@ -21,7 +21,7 @@ const PostList = ({ posts }) => {
               />
             </div>
             <h2 className="uppercase text-2xl text-center leading-relaxed font-bold py-4 ">
-              Check out our latest articles on Kodao's Web3.0 blog!
+              Check out our latest articles on Kodao&apos;s Web3.0 blog!
             </h2>
           </div>
         </div>

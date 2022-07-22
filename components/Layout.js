@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
           name="description"
           content="Check out our latest articles on Kodao's Web3.0 blog!"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/logo/logo.ico" />
       </Head>
       <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       <main onClick={() => setMenuOpen(false)}>{children}</main>
