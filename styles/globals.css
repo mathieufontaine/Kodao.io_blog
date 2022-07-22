@@ -76,8 +76,9 @@ mark {
 }
 
 figure img {
-  height: 200px;
+  height: 250px;
   margin: 30px auto;
+  object-fit: contain;
 }
 
 article ul,

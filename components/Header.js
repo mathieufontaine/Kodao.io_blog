@@ -8,7 +8,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 const Header = ({ menuOpen, setMenuOpen }) => {
   return (
     <header
-      className="text-white bg-black h-[10vh] top-0 w-full 
+      className="text-white bg-black h-[10vh] top-0 w-full fixed md:relative
       flex z-10 items-center justify-between py-8 px-12 border-b-2 border-white"
     >
       <a href="https://www.kodao.io" target="_blank" rel="noopener noreferrer">
@@ -72,8 +72,8 @@ const Header = ({ menuOpen, setMenuOpen }) => {
         )}
       </button>
       <nav
-        className={`md:hidden absolute pb-10 px-5 h-[90vh] right-[-100%] top-[10vh] z-10 bg-black bg-opacity-80 
-      transition-all ${menuOpen && "block right-0"}`}
+        className={`md:hidden fixed pb-10 px-5 h-[90vh] top-[10vh] z-10 bg-black bg-opacity-90 
+      transition-all ${menuOpen ? "block right-0" : "hidden right-[-100%]"}`}
       >
         <ul>
           <li

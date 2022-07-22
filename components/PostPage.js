@@ -24,7 +24,7 @@ const BlockRenderer = (props) => {
     } else if (level === "3") {
       classNames = "mt-3 py-5 font-semibold";
     } else if (level === "4") {
-      classNames = "p-5 font-base";
+      classNames = "py-5 font-base";
     }
     return React.createElement(
       style,
@@ -250,7 +250,6 @@ const SinglePost = ({ post }) => {
             )}
           </div>
         </section>
-        <Cta />
       </main>
     </>
   );
