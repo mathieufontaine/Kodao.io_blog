@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
         <title>Kodao.io Blog</title>
         <meta
           name="description"
-          content="Découvrez nos derniers articles sur le blog de Kodao consacré au Web3.0 !"
+          content="Check out our latest articles on Kodao's Web3.0 blog!"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

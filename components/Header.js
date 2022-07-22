@@ -8,10 +8,14 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 const Header = ({ menuOpen, setMenuOpen }) => {
   return (
     <header
-      className="text-white fixed bg-black bg-opacity-80 h-[10vh] top-0 w-full 
+      className="text-white bg-black h-[10vh] top-0 w-full 
       flex z-10 items-center justify-between py-8 px-12 border-b-2 border-white"
     >
-      <Link href="/" target="_blank" rel="noopener noreferrer">
+      <Link
+        href="https://www.kodao.io"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <a>
           <div className="relative h-20 w-40">
             <Image
@@ -38,7 +42,7 @@ const Header = ({ menuOpen, setMenuOpen }) => {
             after:absolute after:bottom-[-10px] after:left-0 after:transition-all"
           >
             <Link
-              href="/index.html#offer"
+              href="https://www.kodao.io/solutions"
               id="nav-offer"
               className="navbar_link"
             >
@@ -50,7 +54,7 @@ const Header = ({ menuOpen, setMenuOpen }) => {
             after:absolute after:bottom-[-10px] after:left-0 after:transition-all"
           >
             <Link
-              href="/index.html#contact"
+              href="https://www.kodao.io/contact"
               id="nav-contact"
               className="navbar_link"
             >

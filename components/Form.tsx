@@ -44,10 +44,8 @@ const Form: React.FC<FormProps> = ({ id }) => {
           </div>
         ) : (
           <>
-            <h3 className="text-center">Vous avez aimé cet article?</h3>
-            <h4 className="text-accent text-center">
-              Laissez un commentaire !
-            </h4>
+            <h3 className="text-center">Did you like this article?</h3>
+            <h4 className="text-accent text-center">Leave a comment!</h4>
             <form
               className="bg-gray-200 p-8 lg:border-r-1 lg:border-accent"
               onSubmit={handleSubmit(onSubmit)}
@@ -55,7 +53,7 @@ const Form: React.FC<FormProps> = ({ id }) => {
               <input {...register("_id")} type="hidden" name="_id" value={id} />
               <div className="grid grid-cols-2 gap-4">
                 <label className="block">
-                  <span className="mr-4 mb-2 text-lg">Nom :</span>
+                  <span className="mr-4 mb-2 text-lg">Name:</span>
                   <input
                     {...register("name", { required: true })}
                     className="mt-2 bg-white p-5 outline-none w-full placeholder:text-gray-400"
@@ -64,12 +62,12 @@ const Form: React.FC<FormProps> = ({ id }) => {
                   />
                   {errors.name && (
                     <span className="text-red p-4 italic">
-                      - Le nom est requis
+                      - Name is required
                     </span>
                   )}
                 </label>
                 <label className="block">
-                  <span className="mr-4 mb-2 text-lg">Email :</span>
+                  <span className="mr-4 mb-2 text-lg">Email:</span>
                   <input
                     {...register("email", { required: true })}
                     className="mt-2 bg-white p-5 outline-none w-full placeholder:text-gray-400"
@@ -78,14 +76,14 @@ const Form: React.FC<FormProps> = ({ id }) => {
                   />
                   {errors.email && (
                     <span className="text-red p-4 italic">
-                      - L&apos;email est requis
+                      - Email is required
                     </span>
                   )}
                 </label>
               </div>
 
               <label className="block mt-5">
-                <span className="mt-4 mb-2 text-lg">Commentaire :</span>
+                <span className="mt-4 mb-2 text-lg">Comment:</span>
                 <textarea
                   {...register("comment", { required: true })}
                   placeholder="Web3 is amazing!"
@@ -96,15 +94,11 @@ const Form: React.FC<FormProps> = ({ id }) => {
                 ></textarea>
                 {errors.comment && (
                   <span className="text-red p-4 italic">
-                    - Le commentaire est vide
+                    - Comment is empty
                   </span>
                 )}
               </label>
-              <input
-                className="mt-5 btn btn-sm"
-                type="submit"
-                value="Envoyer"
-              />
+              <input className="mt-5 btn btn-sm" type="submit" value="Submit" />
             </form>
           </>
         )}

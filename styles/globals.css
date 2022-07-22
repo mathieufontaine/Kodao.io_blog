@@ -43,6 +43,7 @@ h1 {
   font-weight: 400;
   font-size: 3rem;
   text-align: center;
+  padding-bottom: 20px;
 }
 
 h2 {
@@ -96,8 +97,8 @@ input:focus {
 }
 
 .btn {
-  @apply inline-block cursor-pointer rounded-2xl overflow-hidden bg-accent border-accent border-2 
-  text-lg text-white px-10 py-6 rounded-lg shadow-lg font-semibold;
+  @apply inline-block cursor-pointer overflow-hidden bg-accent border-accent border-2 
+  text-lg text-white px-8 py-4 rounded-lg shadow-lg font-semibold;
 }
 .btn-sm {
   padding: 0.5rem 1rem;

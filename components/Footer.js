@@ -22,16 +22,16 @@ const Footer = () => {
             </h4>
             <ul>
               <li>
-                <Link href="/">
+                <Link href="https://www.kodao.io">
                   <a className="text-black font-thin my-2 hover:text-accent">
                     A propos
                   </a>
                 </Link>
               </li>
               <li>
-                <Link href="/">
+                <Link href="https://www.kodao.io/solutions">
                   <a className="text-black font-thin my-2 hover:text-accent">
-                    Nos services
+                    Nos solutions
                   </a>
                 </Link>
               </li>
@@ -69,13 +69,6 @@ const Footer = () => {
               <li>
                 <Link href="/">
                   <a className="text-black font-thin my-2 hover:text-accent">
-                    Collabs (à venir)
-                  </a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/">
-                  <a className="text-black font-thin my-2 hover:text-accent">
                     Blog
                   </a>
                 </Link>
@@ -83,7 +76,14 @@ const Footer = () => {
               <li>
                 <Link href="/">
                   <a className="text-black font-thin my-2 hover:text-accent">
-                    Nouveaux services
+                    Collabs (à venir)
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/">
+                  <a className="text-black font-thin my-2 hover:text-accent">
+                    Nouveaux services (à venir)
                   </a>
                 </Link>
               </li>
@@ -97,7 +97,7 @@ const Footer = () => {
               Nous suivre
             </h4>
             <div className="flex md:grid md:grid-cols-2 gap-2 justify-center items-center">
-              <Link href="/">
+              <Link href="https://discord.gg/BXtp6szz7C">
                 <a
                   className="flex items-center justify-center h-14 w-14 text-white bg-accent hover:text-accent 
                 hover:bg-white border-accent border-2 rounded-full text-xl"
@@ -105,7 +105,7 @@ const Footer = () => {
                   <FontAwesomeIcon icon={faDiscord} />
                 </a>
               </Link>
-              <Link href="/">
+              <Link href="https://twitter.com/kodao_io">
                 <a
                   className="flex items-center justify-center h-14 w-14 text-white bg-accent hover:text-accent 
                 hover:bg-white border-accent border-2 rounded-full text-xl"
@@ -113,7 +113,7 @@ const Footer = () => {
                   <FontAwesomeIcon icon={faTwitter} />
                 </a>
               </Link>
-              <Link href="/">
+              {/* <Link href="/">
                 <a
                   className="flex items-center justify-center h-14 w-14 text-white bg-accent hover:text-accent 
                 hover:bg-white border-accent border-2 rounded-full text-xl"
@@ -128,7 +128,7 @@ const Footer = () => {
                 >
                   <FontAwesomeIcon icon={faLinkedin} />
                 </a>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

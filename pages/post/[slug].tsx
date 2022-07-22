@@ -49,13 +49,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         body,
         "authorName":author->name,
         "authorImage": author->image,
+        "categories": categories[]->title,
         "comments": *[
           _type == "comment" && 
           post._ref == ^._id &&
           approved == true
         ]
       }`;
-
   const post = await sanityClient.fetch(query, {
     slug: params?.slug,
   });

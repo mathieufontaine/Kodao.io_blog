@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const Post = ({ post }) => {
+  console.log(post);
   return (
     <Link key={post._id} href={`/post/${post.slug?.current}`}>
       <div
@@ -24,7 +25,7 @@ const Post = ({ post }) => {
           <h4 className="leading-relaxed py-0">{post.title}</h4>
           <p className="my-3 text-sm leading-loose">
             {post.excerpt}
-            <span className="text-gray-400 p-3">Lire la suite..</span>
+            <span className="text-gray-400 p-3">Read more..</span>
           </p>
           <div className="flex items-center justify-between">
             <div className="py-3 text-sm">

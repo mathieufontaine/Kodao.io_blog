@@ -6,9 +6,9 @@ const PostList = ({ posts }) => {
   console.log(posts);
   return (
     <div className="color-black">
-      <section className="bg-black pt-[10vh]">
+      <section className="bg-black py-6">
         <div className="container">
-          <div className="text-white w-3/4 lg:w-2/3 xl:w-1/2 flex flex-col items-center justify-center mx-auto">
+          <div className="text-white w-3/4 lg:w-2/3 2xl:w-1/2 flex flex-col items-center justify-center mx-auto">
             <h1 className="">Kodao.io Blog</h1>
             <div className="relative w-full h-10 my-5">
               <Image
@@ -21,15 +21,14 @@ const PostList = ({ posts }) => {
               />
             </div>
             <h2 className="uppercase text-2xl text-center leading-relaxed font-bold py-4 ">
-              Découvrez nos derniers articles sur le blog de Kodao consacré au
-              Web3.0 !
+              Check out our latest articles on Kodao's Web3.0 blog!
             </h2>
           </div>
         </div>
       </section>
       <section className="bg-white">
         <div className="container">
-          <h3 className="py-0">Derniers Articles</h3>
+          <h3 className="py-0">Last Articles</h3>
           <hr className="w-full h-1 my-5 mx-auto bg-accent" />
           <div
             className="mt-3 pt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 

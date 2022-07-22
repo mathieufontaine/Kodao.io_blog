@@ -6,24 +6,25 @@ const Cta = () => {
       <div className="container">
         <div className="lg:grid lg:grid-cols-[2fr,1fr]">
           <div>
-            <h3>
-              Kodao.io vous aide à vous lancer dans le web3 dès maintenant !
-            </h3>
+            <h3>What does Web3 change for the User?</h3>
             <p>
-              Le Web3 permet de donner beaucoup plus de liberté et de pouvoir
-              aux utilisateurs, créant ainsi une infinité de possibilité pour
-              les organisations et leur communautés.
+              Web3 is the decentralized Web, which means that users' data no
+              longer pass through the servers of a intermediary but via a
+              totally decentralized network (blockchain).{" "}
             </p>
-            <p>
-              Il est temps de construire, vendre, innover et partager !
-              Lancez-vous dans le web3 dès maintenant !
+            <p className="mt-2">
+              Thus, it gives much more freedom and power to end users, creating
+              an infinite number of possibilities for organizations to exchange
+              values with their communities. It's time to build, sell, innovate
+              and share!{" "}
             </p>
+            <h4 className="mt-2">Lets's get started with web3 now!</h4>
           </div>
           <div className="lg:flex lg:items-center lg:justify-center ">
-            <Link href="/contact">
+            <Link href="https://www.kodao.io/contact">
               <a>
-                <button className="btn mt-8" type="button">
-                  En savoir plus
+                <button className="btn mt-8 lg:mt-0" type="button">
+                  More Information
                 </button>
               </a>
             </Link>
