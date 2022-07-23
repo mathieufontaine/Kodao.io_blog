@@ -82,7 +82,7 @@ const serializers = {
   },
 };
 
-const SinglePost = ({ post }) => {
+const PostPage = ({ post }) => {
   // useEffect(() => {
   //   const aside = document.querySelector("aside");
   //   const navbar = document.querySelector("header").offsetHeight;
