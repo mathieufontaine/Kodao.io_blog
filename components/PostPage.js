@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import BlockContent from "@sanity/block-content-to-react";
-import Cta from "./Cta";
 import Form from "./Form";
 import getYoutubeId from "get-youtube-id";
 import { urlFor, config } from "../client";
@@ -9,9 +8,7 @@ import Head from "next/head";
 import Comments from "./Comments";
 import Image from "next/image";
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDiscord, faTwitter } from "@fortawesome/free-brands-svg-icons";
-import "@fortawesome/fontawesome-svg-core/styles.css";
+import Sidebar from "./Sidebar";
 
 const BlockRenderer = (props) => {
   const { style = "normal" } = props.node;
@@ -114,20 +111,20 @@ const SinglePost = ({ post }) => {
       </Head>
       <main>
         {/* {!isLoading && post !== null && ( */}
-        <div className="border-b-4 border-accent bg-black">
-          <div className="relative pb-1/3 md:pb-1/4 lg:pb-1/6 w-full">
-            <Image
-              layout="fill"
-              objectFit="cover"
-              src={urlFor(post.mainImage).url()}
-              alt={post.title}
-            />
-          </div>
+        <div className="relative pb-1/2 sm:pb-1/3 md:pb-1/4 lg:pb-1/5 xl:pb-1/6 w-full mt-[10vh] md:mt-0">
+          <Image
+            layout="fill"
+            objectFit="cover"
+            src={urlFor(post.mainImage).url()}
+            alt={post.title}
+          />
         </div>
         <article className="grid md:grid-cols-[3fr_1fr]">
           <section className="bg-white text-black">
             <div className="container lg:max-w-[1200px]">
-              <h1 className="text-left font-bold">{post.title}</h1>
+              <h1 className="text-4xl font-bold text-left md:text-5xl leading-relaxed md:leading-relaxed">
+                {post.title}
+              </h1>
               <div className="pb-10 text-justify">
                 <BlockContent
                   blocks={post.body}
@@ -162,77 +159,7 @@ const SinglePost = ({ post }) => {
               </div>
             </div>
           </section>
-          <aside className="bg-violet-100 text-black">
-            <div className="container md:sticky top-0 md:mb-[300px]">
-              <div className="flex items-center pb-5 gap-3 border-b-2 border-violet-200">
-                <div className="relative w-20 h-20 rounded-full overflow-hidden">
-                  <Image
-                    layout="fill"
-                    objectFit="cover"
-                    src={urlFor(post.authorImage).url()}
-                    alt={post.title}
-                  />
-                </div>
-                <span className="font-bold">{post.authorName}</span>
-              </div>
-              <div className="grid grid-cols-[1fr_3fr] py-5 grid-rows-2 gap-5 items-center">
-                <div className="font-bold">PUBLISHED</div>
-                <div className="">
-                  {new Date(post.publishedAt).toLocaleDateString("en-US", {
-                    weekday: "long",
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
-                </div>
-                <div className="font-bold">TAGS</div>
-                <div className="flex gap-2">
-                  {post.categories?.map((tag, index) => (
-                    <div
-                      key={index}
-                      className="bg-black rounded-md p-2 text-sm text-center text-white"
-                    >
-                      {tag}
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="border-t-2 pt-5 border-violet-200 grid grid-cols-[1fr_3fr] gap-5 items-center">
-                <div className="font-bold">SHARE</div>
-                <div className="flex gap-2">
-                  <Link href="https://discord.gg/BXtp6szz7C">
-                    <a
-                      className="flex items-center justify-center h-14 w-14 text-accent rounded-full hover:text-accent 
-                hover:bg-white text-3xl"
-                    >
-                      <FontAwesomeIcon icon={faDiscord} />
-                    </a>
-                  </Link>
-                  <Link href="https://twitter.com/kodao_io">
-                    <a
-                      className="flex items-center justify-center h-14 w-14 text-accent rounded-full hover:text-accent 
-                      hover:bg-white text-3xl"
-                    >
-                      <FontAwesomeIcon icon={faTwitter} />
-                    </a>
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className="container md:sticky md:top-[400px] text-center flex flex-col items-center justify-center">
-              <h4 className="pb-3">Ready to get started with Web3 ?</h4>
-              <p className="">
-                Kodao.io supports you in all the steps of your project.
-              </p>
-              <Link href="https://www.kodao.io/contact">
-                <a className="w-full">
-                  <button className="btn btn-sm mt-3 w-full" type="button">
-                    More Information
-                  </button>
-                </a>
-              </Link>
-            </div>
-          </aside>
+          <Sidebar post={post} />
         </article>
         <section
           className={`bg-gray-100 ${
@@ -254,4 +181,4 @@ const SinglePost = ({ post }) => {
   );
 };
 
-export default SinglePost;
+export default PostPage;

@@ -20,7 +20,7 @@ const Cta = () => {
             </p>
             <h4 className="mt-2">Lets&apos;s get started with web3 now!</h4>
           </div>
-          <div className="lg:flex lg:items-center lg:justify-center ">
+          <div className="flex items-center justify-center ">
             <Link href="https://www.kodao.io/contact">
               <a>
                 <button className="btn mt-8 lg:mt-0" type="button">

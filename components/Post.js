@@ -20,7 +20,7 @@ const Post = ({ post }) => {
             />
           </div>
         )}
-        <div className="relative p-8 z-10 overflow-hidden">
+        <div className="p-8 overflow-hidden">
           <div className="flex items-center justify-between">
             <div className="flex justify-end text-white gap-2">
               {post.categories?.map((tag, index) => (

@@ -32,7 +32,7 @@ const PostList = ({ posts }) => {
   };
 
   return (
-    <div className="color-black pt-[10vh] md:pt-0">
+    <div className="color-black border-t-2 border-white pt-[10vh] md:pt-0">
       <section className="relative bg-gradient-to-r from-[#330656] to-black py-6">
         {/* <div className="absolute w-full h-full top-0 left-0 ">
           <Image
@@ -44,8 +44,8 @@ const PostList = ({ posts }) => {
         </div> */}
         <div className="container relative z-10">
           <div className="text-white w-3/4 lg:w-2/3 2xl:w-1/2 flex flex-col items-center justify-center mx-auto">
-            <h1 className="text-4xl lg:text-6xl">Kodao.io Blog</h1>
-            <div className="relative w-full h-10 my-3">
+            <h1 className="text-6xl pb-0">Kodao.io Blog</h1>
+            <div className="relative w-full h-10 my-5">
               <Image
                 layout="fill"
                 objectFit="contain"
@@ -54,15 +54,15 @@ const PostList = ({ posts }) => {
                 alt="web3 communities"
               />
             </div>
-            <h2 className="text-2xl lg:text-3xl text-center leading-relaxed font-bold">
+            <h2 className="text-2xl lg:text-3xl lg:leading-relaxed text-center leading-relaxed font-bold">
               Exploring Blockchain & NFT technologies and the future of Web3
             </h2>
           </div>
         </div>
       </section>
-      <section className="bg-white">
-        <div className="max-w-[1400px] pt-4 px-[6%] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-4 w-full items-center text-center">
+      <section className="bg-white lg:sticky lg:top-0 relative z-10">
+        <div className="max-w-[1400px] py-4 px-[6%] mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full items-center text-center">
             {categories.map((cat, index) => (
               <div
                 key={index}
@@ -71,7 +71,7 @@ const PostList = ({ posts }) => {
               >
                 <h4 className="text-xl px-8 py-4 hover:text-accent">{cat}</h4>
                 <hr
-                  className={`mt-2 mx-auto ${
+                  className={`mx-auto transition-all ${
                     cat === title ? "h-1 bg-accent mx-2" : "h-1 bg-gray-200"
                   }`}
                 />

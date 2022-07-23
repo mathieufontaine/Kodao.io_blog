@@ -103,39 +103,37 @@ const Footer = () => {
             >
               Follow Us
             </h4>
-            <div className="flex md:grid md:grid-cols-2 gap-2 justify-center items-center">
-              <Link href="https://discord.gg/BXtp6szz7C">
-                <a
-                  className="flex items-center justify-center h-14 w-14 text-white bg-accent hover:text-accent 
+            <div className="flex md:grid md:grid-cols-3 gap-2 justify-center items-center">
+              <a
+                href="https://discord.gg/BXtp6szz7C"
+                className="flex items-center justify-center h-14 w-14 text-white bg-accent hover:text-accent 
                 hover:bg-white border-accent border-2 rounded-full text-xl"
-                >
-                  <FontAwesomeIcon icon={faDiscord} />
-                </a>
-              </Link>
-              <Link href="https://twitter.com/kodao_io">
-                <a
-                  className="flex items-center justify-center h-14 w-14 text-white bg-accent hover:text-accent 
+              >
+                <FontAwesomeIcon icon={faDiscord} />
+              </a>
+
+              <a
+                href="https://twitter.com/kodao_io"
+                className="flex items-center justify-center h-14 w-14 text-white bg-accent hover:text-accent 
                 hover:bg-white border-accent border-2 rounded-full text-xl"
-                >
-                  <FontAwesomeIcon icon={faTwitter} />
-                </a>
-              </Link>
-              {/* <Link href="/">
-                <a
+              >
+                <FontAwesomeIcon icon={faTwitter} />
+              </a>
+
+              {/* <a
                   className="flex items-center justify-center h-14 w-14 text-white bg-accent hover:text-accent 
                 hover:bg-white border-accent border-2 rounded-full text-xl"
                 >
                   <FontAwesomeIcon icon={faInstagram} />
-                </a>
-              </Link>
-              <Link href="/">
-                <a
-                  className="flex items-center justify-center h-14 w-14 text-white bg-accent hover:text-accent 
+                </a> */}
+
+              <a
+                href="https://www.linkedin.com/company/kodao-io"
+                className="flex items-center justify-center h-14 w-14 text-white bg-accent hover:text-accent 
                 hover:bg-white border-accent border-2 rounded-full text-xl"
-                >
-                  <FontAwesomeIcon icon={faLinkedin} />
-                </a>
-              </Link> */}
+              >
+                <FontAwesomeIcon icon={faLinkedin} />
+              </a>
             </div>
           </div>
         </div>
