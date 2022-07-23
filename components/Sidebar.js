@@ -100,7 +100,12 @@ const Sidebar = ({ post }) => {
         <p className="">
           Kodao.io supports you in all the steps of your project.
         </p>
-        <a href="https://www.kodao.io" target="_blank" className="w-full">
+        <a
+          href="https://www.kodao.io"
+          target="_blank"
+          rel="noreferrer"
+          className="w-full"
+        >
           <button className="btn btn-sm mt-3 w-full" type="button">
             More Information
           </button>
