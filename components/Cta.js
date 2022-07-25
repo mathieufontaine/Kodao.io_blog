@@ -6,11 +6,13 @@ const Cta = () => {
       <div className="container">
         <div className="lg:grid lg:grid-cols-[2fr,1fr]">
           <div>
-            <h3>What does Web3 change for the User?</h3>
+            <h3>Let us help you get started with Web3!</h3>
             <p>
-              Web3 is the decentralized Web, which means that users&apos; data
-              no longer pass through the servers of a intermediary but via a
-              totally decentralized network (blockchain).
+              Web3 changes the way we interact with the internet. Instead of
+              using traditional websites, web3 allows users to access the
+              internet through a decentralized application (dApp) that runs on a
+              blockchain, which means that users can interact with the internet
+              without having to trust a central authority.
             </p>
             <p className="mt-2">
               Thus, it gives much more freedom and power to end users, creating
@@ -36,3 +38,23 @@ const Cta = () => {
 };
 
 export default Cta;
+
+{
+  /* <section className="section section--white">
+        <div className="container">
+          <h3>Pourquoi le Web3 ?</h3>
+          <p>
+            Le Web3 correspond au Web décentralisé, qui signifie que les données
+            d'un utilisateur ne transitent plus à travers les serveurs d'un
+            intéremédiaire mais via un réseau totalement décentralisé
+            (blockchain). Les données sont anonymes et possédées par
+            l'utilisateur.
+          </p>
+          <p>
+            Le Web3 permet de donner beaucoup plus de liberté et de pouvoir aux
+            utilisateurs, créant ainsi une infinité de possibilité pour les
+            organisations et leur communautés.{" "}
+          </p>
+        </div>
+      </section> */
+}

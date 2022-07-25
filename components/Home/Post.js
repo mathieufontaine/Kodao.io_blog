@@ -1,5 +1,5 @@
 import React from "react";
-import { urlFor } from "../client";
+import { urlFor } from "../../client";
 import Link from "next/link";
 import Image from "next/image";
 

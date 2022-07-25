@@ -9,7 +9,7 @@ const Header = ({ menuOpen, setMenuOpen }) => {
   return (
     <header
       className="text-white bg-black h-[10vh] top-0 w-full fixed md:relative
-      flex z-10 items-center justify-between py-8 px-12"
+      flex z-20 items-center justify-between py-8 px-12"
     >
       <a href="https://www.kodao.io" target="_blank" rel="noopener noreferrer">
         <div className="relative h-20 w-40">

@@ -1,5 +1,5 @@
 import { sanityClient, urlFor } from "../../client";
-import PostPage from "../../components/PostPage";
+import PostPage from "../../components/Page/PostPage";
 import { GetStaticProps } from "next";
 import { Post } from "../../typings";
 

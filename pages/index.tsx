@@ -2,15 +2,20 @@ import type { NextPage } from "next";
 import { sanityClient, urlFor } from "../client";
 import { Post } from "../typings";
 import { GetStaticProps } from "next";
-
-import PostList from "../components/PostList";
+import Hero from "../components/home/Hero";
+import PostList from "../components/Home/PostList";
 
 interface Props {
   posts: [Post];
 }
 
 const Home = ({ posts }: Props) => {
-  return <PostList posts={posts} />;
+  return (
+    <>
+      <Hero />
+      <PostList posts={posts} />
+    </>
+  );
 };
 
 export const getStaticProps: GetStaticProps = async () => {

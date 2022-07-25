@@ -1,5 +1,5 @@
 import React from "react";
-import { urlFor } from "../client";
+import { urlFor } from "../../client";
 import Image from "next/image";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,7 +8,6 @@ import {
   faTwitter,
   faFacebook,
 } from "@fortawesome/free-brands-svg-icons";
-import "@fortawesome/fontawesome-svg-core/styles.css";
 
 const Sidebar = ({ post }) => {
   const tweet = encodeURIComponent(

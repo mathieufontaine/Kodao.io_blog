@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import BlockContent from "@sanity/block-content-to-react";
 import Form from "./Form";
 import getYoutubeId from "get-youtube-id";
-import { urlFor, config } from "../client";
+import { urlFor, config } from "../../client";
 import PortableText from "react-portable-text";
 import Head from "next/head";
 import Comments from "./Comments";
