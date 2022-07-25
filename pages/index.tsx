@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import { sanityClient, urlFor } from "../client";
 import { Post } from "../typings";
 import { GetStaticProps } from "next";
-import Hero from "../components/home/Hero";
+import Hero from "../components/Home/Hero";
 import PostList from "../components/Home/PostList";
 
 interface Props {
