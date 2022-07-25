@@ -12,11 +12,11 @@ const Footer = () => {
   return (
     <footer className="bg-white">
       <div className="container">
-        <div className="mx-auto text-center max-w-xl flex flex-col md:px-40 md:max-w-screen-lg md:text-left md:w-full md:flex-row justify-between">
+        <div className="mx-auto text-center max-w-xl flex flex-col sm:px-8 lg:px-40 sm:max-w-screen-lg sm:text-left sm:w-full sm:flex-row justify-between">
           <div className="my-5">
             <h4
               className="mb-8 relative after:w-1/2 text-2xl after:content:[''] after:h-1 after:bg-accent 
-              after:absolute after:bottom-[-5px] after:left-1/2 after:translate-x-[-50%] md:after:left-0  md:after:translate-x-0"
+              after:absolute after:bottom-[-5px] after:left-1/2 after:translate-x-[-50%] sm:after:left-0  sm:after:translate-x-0"
             >
               Kodao.io
             </h4>
@@ -68,7 +68,7 @@ const Footer = () => {
           <div className="my-5">
             <h4
               className="mb-8 relative after:w-1/2 text-2xl after:content:[''] after:h-1 after:bg-accent 
-              after:absolute after:bottom-[-5px] after:left-1/2 after:translate-x-[-50%] md:after:left-0  md:after:translate-x-0"
+              after:absolute after:bottom-[-5px] after:left-1/2 after:translate-x-[-50%] sm:after:left-0  sm:after:translate-x-0"
             >
               News
             </h4>
@@ -99,7 +99,7 @@ const Footer = () => {
           <div className="my-5">
             <h4
               className="mb-8 relative after:w-1/2 text-2xl after:content:[''] after:h-1 after:bg-accent 
-              after:absolute after:bottom-[-5px] after:left-1/2 after:translate-x-[-50%] md:after:left-0  md:after:translate-x-0"
+              after:absolute after:bottom-[-5px] after:left-1/2 after:translate-x-[-50%] sm:after:left-0  sm:after:translate-x-0"
             >
               Follow Us
             </h4>

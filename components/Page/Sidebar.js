@@ -102,7 +102,7 @@ const Sidebar = ({ post }) => {
         <a
           href="https://www.kodao.io"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           className="w-full"
         >
           <button className="btn btn-sm mt-3 w-full" type="button">
