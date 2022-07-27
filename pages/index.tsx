@@ -38,6 +38,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       posts,
     },
+    revalidate: 360,
   };
 };
 export default Home;

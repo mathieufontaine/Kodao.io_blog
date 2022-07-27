@@ -7,7 +7,7 @@ const Post = ({ post }) => {
   return (
     <Link key={post._id} href={`/post/${post.slug?.current}`}>
       <div
-        className="bg-white shadow rounded-md overflow-hidden cursor-pointer 
+        className="w-full bg-white shadow rounded-md overflow-hidden cursor-pointer 
       transition ease-in-out mx-auto hover:shadow-4xl group"
       >
         {post.mainImage && (
