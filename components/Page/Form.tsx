@@ -60,8 +60,8 @@ const Form: React.FC<FormProps> = ({ id }) => {
                   <span className="mb-2">Name:</span>
                   <input
                     {...register("name", { required: true })}
-                    className="mt-2 bg-white p-3 outline-none w-full placeholder:text-gray-400"
-                    placeholder="Mathieu Fontaine"
+                    className="mt-2 bg-white p-3 outline-none w-full placeholder:text-gray-300"
+                    placeholder="Vitalik Buterin"
                     type="text"
                   />
                   {errors.name && (
@@ -74,8 +74,8 @@ const Form: React.FC<FormProps> = ({ id }) => {
                   <span className="mb-2">Email:</span>
                   <input
                     {...register("email", { required: true })}
-                    className="mt-2 bg-white p-3 outline-none w-full placeholder:text-gray-400"
-                    placeholder="mathieu@kodao.io"
+                    className="mt-2 bg-white p-3 outline-none w-full placeholder:text-gray-300"
+                    placeholder="vitalik@ethereum.com"
                     type="email"
                   />
                   {errors.email && (
@@ -90,8 +90,8 @@ const Form: React.FC<FormProps> = ({ id }) => {
                 <span className="mt-4 mb-2">Comment:</span>
                 <textarea
                   {...register("comment", { required: true })}
-                  placeholder="Web3 is amazing!"
-                  className="mt-2 bg-white p-3 outline-none w-full placeholder:text-gray-400"
+                  placeholder="Web3 is the future"
+                  className="mt-2 bg-white p-3 outline-none w-full placeholder:text-gray-300"
                   name="comment"
                   // cols={90}
                   rows={4}
