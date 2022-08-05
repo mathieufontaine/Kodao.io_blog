@@ -25,7 +25,8 @@
     "components/Blog.js",
     "components/Page/Header.js",
     "components/Footer.js",
-    "components/Cta.js"
+    "components/Cta.js",
+    "pages/[slug].js"
   ],
   "exclude": ["node_modules"]
 }

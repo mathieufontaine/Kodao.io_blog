@@ -15,6 +15,7 @@ const BlockRenderer = (props) => {
 
   if (/^h\d/.test(style)) {
     const level = style.replace(/[^\d]/g, "");
+    console.log(first);
     let classNames;
     if (level === "2") {
       classNames = "mt-5 py-5 font-semibold text-accent";
@@ -110,6 +111,14 @@ const PostPage = ({ post }) => {
         <meta name="description" content={post.excerpt} />
       </Head>
       <main>
+        {/* {preview && (
+          <Link
+            href="/api/exit-preview"
+            className="fixed bottom-4 right-4 p-4 bg-green-600 text-white"
+          >
+            Preview Mode Activated!
+          </Link>
+        )} */}
         {/* {!isLoading && post !== null && ( */}
         <div className="relative pb-1/2 sm:pb-1/3 md:pb-1/4 lg:pb-1/5 xl:pb-1/6 w-full mt-[10vh] md:mt-0">
           <Image
