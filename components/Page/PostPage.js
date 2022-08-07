@@ -15,7 +15,7 @@ const BlockRenderer = (props) => {
 
   if (/^h\d/.test(style)) {
     const level = style.replace(/[^\d]/g, "");
-    console.log(first);
+    console.log(level);
     let classNames;
     if (level === "2") {
       classNames = "mt-5 py-5 font-semibold text-accent";
@@ -134,7 +134,7 @@ const PostPage = ({ post }) => {
               <h1 className="text-4xl font-bold text-left md:text-5xl leading-relaxed md:leading-relaxed">
                 {post.title}
               </h1>
-              <div className="pb-10 text-justify">
+              <div className="pb-10 mt-[-2rem] text-justify">
                 <BlockContent
                   blocks={post.body}
                   projectId={config.projectId}
