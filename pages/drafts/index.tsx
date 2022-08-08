@@ -1,9 +1,10 @@
 import type { NextPage } from "next";
-import { sanityClient, urlFor } from "../client";
-import { Post } from "../typings";
+import { sanityClient, urlFor } from "../../client";
+import { Post } from "../../typings";
 import { GetStaticProps } from "next";
-import Hero from "../components/Home/Hero";
-import PostList from "../components/Home/PostList";
+import Hero from "../../components/Home/Hero";
+import PostList from "../../components/Home/PostList";
+import Head from "next/head";
 
 interface Props {
   posts: [Post];
@@ -12,6 +13,15 @@ interface Props {
 const Home = ({ posts }: Props) => {
   return (
     <>
+      <Head>
+        <title>Kodao.io Frafts</title>
+        <meta
+          name="description"
+          content="Check out our latest articles on Kodao's Web3.0 blog!"
+        />
+        <link rel="icon" href="/images/logo/logo.ico" />
+        <meta name="robots" content="noindex"></meta>
+      </Head>
       <Hero />
       <PostList posts={posts} />
     </>
@@ -19,7 +29,7 @@ const Home = ({ posts }: Props) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const query = `*[_type == "post" && !(_id in path("drafts.**"))]{
+  const query = `*[_type == "post" && (_id in path("drafts.**"))]{
     _id,
     title,
     slug,

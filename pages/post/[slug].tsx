@@ -14,7 +14,7 @@ const Post = ({ post }: Props) => {
 export default Post;
 
 export const getStaticPaths = async () => {
-  const query = `*[type == "post"]{
+  const query = `*[_type == "post"]{
         _id,
         slug{
             current
