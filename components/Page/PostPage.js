@@ -131,10 +131,10 @@ const PostPage = ({ post }) => {
         <article className="grid md:grid-cols-[3fr_1fr]">
           <section className="bg-white text-black">
             <div className="container lg:max-w-[1200px]">
-              <h1 className="text-4xl font-bold text-left md:text-5xl leading-relaxed md:leading-relaxed">
+              <h1 className="text-4xl font-bold text-left mmd:text-5xl leading-relaxed">
                 {post.title}
               </h1>
-              <div className="pb-10 mt-[-2rem] text-justify">
+              <div className="pb-10 text-justify">
                 <BlockContent
                   blocks={post.body}
                   projectId={config.projectId}
