@@ -76,14 +76,31 @@ mark {
 }
 
 figure img {
-  height: 250px;
+  max-width: 100%;
+  height: auto;
   margin: 30px auto;
-  object-fit: contain;
+  /* height: 250px; */
+  /* object-fit: contain; */
 }
 
-article ul,
+/* article ul,
 ol {
-  padding-left: 20px;
+} */
+
+article ol,
+article ul {
+  margin: 30px;
+  list-style: auto;
+}
+
+article li {
+  padding: 0.3rem;
+  font-weight: 500;
+}
+
+article li::marker {
+  color: var(--accent-color);
+  font-size: 1.5rem;
 }
 
 textarea:focus,
