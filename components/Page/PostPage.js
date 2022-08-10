@@ -131,7 +131,7 @@ const PostPage = ({ post }) => {
         <article className="grid md:grid-cols-[3fr_1fr]">
           <section className="bg-white text-black">
             <div className="container lg:max-w-[1200px]">
-              <h1 className="font-bold text-left text-5xl xl:text-6xl leading-relaxed mt-4 mb-8">
+              <h1 className="font-bold text-5xl xl:text-6xl leading-relaxed md:mt-4 md:mb-8 md:text-left">
                 {post.title}
               </h1>
               <div className="pb-10">
