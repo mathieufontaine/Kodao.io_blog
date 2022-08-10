@@ -134,7 +134,7 @@ const PostPage = ({ post }) => {
               <h1 className="font-bold text-left text-5xl xl:text-6xl leading-relaxed">
                 {post.title}
               </h1>
-              <div className="pb-10 text-justify">
+              <div className="pb-10">
                 <BlockContent
                   blocks={post.body}
                   projectId={config.projectId}

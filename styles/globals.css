@@ -77,10 +77,9 @@ mark {
 
 figure img {
   max-width: 100%;
-  height: auto;
   margin: 30px auto;
-  /* height: 250px; */
-  /* object-fit: contain; */
+  height: 300px;
+  object-fit: contain;
 }
 
 /* article ul,
@@ -132,4 +131,22 @@ input:focus {
 }
 .btn:active {
   @apply bg-accent;
+}
+
+@media (min-width: 2000px) {
+  figure img {
+    height: 500px;
+  }
+}
+
+@media (min-width: 1600px) {
+  figure img {
+    height: 400px;
+  }
+}
+
+@media (max-width: 1000px) {
+  figure img {
+    height: 200px;
+  }
 }
