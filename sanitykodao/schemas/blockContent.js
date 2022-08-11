@@ -19,6 +19,12 @@ const highlightRender = (props) => (
   <span style={{ backgroundColor: "#a87bcb" }}>{props.children}</span>
 );
 
+const captionStyle = (props) => (
+  <span style={{ textAlign: "center", color: "gray", marginBottom: "1rem" }}>
+    {props.children}
+  </span>
+);
+
 const YoutubePreview = ({ value }) => {
   const id = getYoutubeId(value.url);
   const url = `https://www.youtube.com/embed/${id}`;
@@ -57,6 +63,13 @@ export default {
         { title: "H3", value: "h3" },
         { title: "H4", value: "h4" },
         { title: "Quote", value: "blockquote" },
+        {
+          title: "Caption",
+          value: "caption",
+          blockEditor: {
+            render: captionStyle,
+          },
+        },
       ],
       lists: [
         { title: "Bullet", value: "bullet" },

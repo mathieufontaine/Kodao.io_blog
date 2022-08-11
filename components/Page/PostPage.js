@@ -35,6 +35,14 @@ const BlockRenderer = (props) => {
     return <blockquote>- {props.children}</blockquote>;
   }
 
+  if (style === "caption") {
+    return (
+      <i className="text-center text-gray-500 mb-[30px] block text-sm">
+        {props.children}
+      </i>
+    );
+  }
+
   // Fall back to default handling
   return BlockContent.defaultSerializers.types.block(props);
 };
@@ -131,7 +139,7 @@ const PostPage = ({ post }) => {
         <article className="grid md:grid-cols-[3fr_1fr]">
           <section className="bg-white text-black">
             <div className="container lg:max-w-[1200px]">
-              <h1 className="font-bold text-5xl xl:text-6xl leading-relaxed md:mt-4 md:mb-8 md:text-left">
+              <h1 className="font-bold text-5xl xl:text-6xl leading-relaxed md:mt-4 md:mb-8 text-left">
                 {post.title}
               </h1>
               <div className="pb-10">
