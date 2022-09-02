@@ -36,7 +36,7 @@ const Header = ({ menuOpen, setMenuOpen }) => {
             after:absolute after:bottom-[-10px] after:left-0 after:transition-all"
           >
             <a
-              href="https://www.kodao.io/solutions"
+              href="https://www.kodao.io/offers"
               id="nav-contact"
               className="navbar_link text-white"
               target="_blank"
@@ -88,7 +88,11 @@ const Header = ({ menuOpen, setMenuOpen }) => {
             className="relative hover:after:w-full mx-6 mt-20 text-xl uppercase after:content:[''] after:w-0 after:h-1 after:bg-accent 
             after:absolute after:bottom-[-10px] after:left-0 after:transition-all"
           >
-            <Link href="/index.html#offer" id="nav-offer" className="menu_link">
+            <Link
+              href="https://www.kodao.io/offers"
+              id="nav-offer"
+              className="menu_link"
+            >
               <a className="text-white">Solutions</a>
             </Link>
           </li>
@@ -97,7 +101,7 @@ const Header = ({ menuOpen, setMenuOpen }) => {
             after:absolute after:bottom-[-10px] after:left-0 after:transition-all"
           >
             <Link
-              href="/index.html#contact"
+              href="https://www.kodao.io/contact"
               id="nav-contact"
               className="menu_link"
             >

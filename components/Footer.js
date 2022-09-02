@@ -29,7 +29,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="https://www.kodao.io/solutions">
+                <Link href="https://www.kodao.io/offers">
                   <a className="text-black font-thin my-2 hover:text-accent">
                     Solutions
                   </a>
