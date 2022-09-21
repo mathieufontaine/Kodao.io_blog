@@ -86,10 +86,14 @@ figure img {
 ol {
 } */
 
-article ol,
-article ul {
+article ol{
   margin: 30px;
   list-style: auto;
+}
+
+article ul {
+  margin: 30px;
+  list-style: disc;
 }
 
 article li {
@@ -99,7 +103,7 @@ article li {
 
 article li::marker {
   color: var(--accent-color);
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 textarea:focus,
