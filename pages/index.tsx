@@ -32,7 +32,12 @@ export const getStaticProps: GetStaticProps = async () => {
     "authorImage": author->image
    }`;
 
-  const posts = await sanityClient.fetch(query);
+  const data = await sanityClient.fetch(query);
+  const posts = data.sort((p1: Post, p2: Post) => {
+    const p1Date = new Date(p1.publishedAt);
+    const p2Date = new Date(p2.publishedAt);
+    return p2Date.getTime() - p1Date.getTime();
+  });
 
   return {
     props: {
