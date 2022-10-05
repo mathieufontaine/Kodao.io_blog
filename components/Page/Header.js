@@ -8,8 +8,8 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 const Header = ({ menuOpen, setMenuOpen }) => {
   return (
     <header
-      className="text-white bg-black h-[10vh] top-0 w-full fixed md:relative
-      flex z-20 items-center justify-between py-8 px-12"
+      className="container text-white bg-black h-[10vh] top-0 w-full fixed md:relative
+      flex z-20 items-center justify-between md:justify-start py-8 px-12"
     >
       <a href="https://www.kodao.io" target="_blank" rel="noopener noreferrer">
         <div className="relative h-20 w-40">
@@ -21,10 +21,10 @@ const Header = ({ menuOpen, setMenuOpen }) => {
           />
         </div>
       </a>
-      <nav className="hidden md:block">
+      <nav className="hidden md:block ml-10">
         <ul className="flex">
           <li
-            className="relative hover:after:w-full mx-6 text-xl after:content:[''] after:w-0 after:h-1 after:bg-accent 
+            className="relative hover:after:w-full mx-10 text-xl after:content:[''] after:w-0 after:h-1 after:bg-accent 
           after:absolute after:bottom-[-10px] after:left-0 after:transition-all"
           >
             <Link href="/" className="navbar_link navbar_link--active">
