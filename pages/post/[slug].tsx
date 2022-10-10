@@ -5,7 +5,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Sidebar from "../../components/PostPage/Sidebar";
 import Article from "../../components/PostPage/Article";
-import Comments from "../../components/PostPage/Comments.js";
+import Comments from "../../components/PostPage/Comments";
 import Form from "../../components/PostPage/Form";
 
 interface Props {
