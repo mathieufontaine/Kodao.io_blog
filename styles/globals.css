@@ -16,7 +16,7 @@ html {
 :root {
   --primary-color: rgb(0, 0, 0);
   --secondary-color: rgb(255, 255, 255);
-  --accent-color: rgb(168, 123, 203);
+  --accent-color: #330656;
   --placeholder-color: rgb(129, 129, 129);
   --bg-color: rgba(0, 0, 0, 0.242);
 }
@@ -78,8 +78,11 @@ mark {
 figure img {
   max-width: 100%;
   margin: 30px auto 10px;
-  max-height: 300px;
-  object-fit: contain;
+  max-height: 400px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 6px solid var(--accent-color);
 }
 
 /* article ul,
@@ -138,26 +141,26 @@ input:focus {
   @apply bg-accent;
 }
 
-@media (min-width: 2000px) {
+/* @media (min-width: 2000px) {
   figure img {
     max-height: 500px;
   }
-}
+} */
 
-@media (min-width: 1600px) {
+@media (min-width: 800px) {
   figure img {
-    max-height: 400px;
+    max-width: 600px;
   }
 }
-
-@media (max-width: 1000px) {
+@media (min-width: 1400px) {
   figure img {
-    max-height: 200px;
+    max-width: 800px;
+    max-height: 450px;
   }
-}
 
-@media (max-width: 600px) {
-  .container {
-    padding: 30px;
+  @media (max-width: 600px) {
+    .container {
+      padding: 30px;
+    }
   }
 }

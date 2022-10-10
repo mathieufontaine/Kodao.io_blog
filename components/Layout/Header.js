@@ -8,7 +8,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 const Header = ({ menuOpen, setMenuOpen }) => {
   return (
     <header
-      className=" text-white bg-black h-[80px] top-0 z-20 w-full fixed md:relative flex items-center
+      className=" text-white bg-black top-0 z-20 w-full sticky md:relative flex items-center
        "
     >
       <div className="container py-4 flex items-center justify-between md:justify-start">

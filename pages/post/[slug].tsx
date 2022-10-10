@@ -20,33 +20,31 @@ const Post = ({ post }: Props) => {
         <title>Kodao.io Blog - {post.title}</title>
         <meta name="description" content={post.excerpt} />
       </Head>
-      <main>
-        {/* banner */}
-        <div className="relative pb-1/2 sm:pb-1/3 md:pb-1/4 lg:pb-1/5 xl:pb-1/6 w-full mt-[10vh] md:mt-0">
-          <Image
-            layout="fill"
-            objectFit="cover"
-            src={urlFor(post.mainImage).url()}
-            alt={post.title}
-          />
+      {/* banner */}
+      <div className="relative pb-[70%] sm:pb-1/3 md:pb-1/4 lg:pb-1/6 2xl:pb-1/7 w-full md:mt-0">
+        <Image
+          layout="fill"
+          objectFit="cover"
+          src={urlFor(post.mainImage).url()}
+          alt={post.title}
+        />
+      </div>
+      {/* content */}
+      <section className="lg:grid lg:grid-cols-[4fr_1fr]">
+        <Article title={post.title} body={post.body} />
+        <Sidebar post={post} />
+      </section>
+      {/* Comments space */}
+      <section
+        className={`bg-gray-100 py-10 ${
+          post.comments?.length > 0 && "grid grid-cols-1 lg:grid-cols-2"
+        }`}
+      >
+        <div className="mx-auto xl:max-w-screen-xl">
+          <Form id={post._id} />
+          {post.comments?.length > 0 && <Comments comments={post.comments} />}
         </div>
-        {/* content */}
-        <section className="lg:grid grid-cols-[4fr_1fr]">
-          <Article title={post.title} body={post.body} />
-          <Sidebar post={post} />
-        </section>
-        {/* Comments space */}
-        <section
-          className={`bg-gray-100 py-10 ${
-            post.comments?.length > 0 && "grid grid-cols-1 lg:grid-cols-2"
-          }`}
-        >
-          <div className="mx-auto xl:max-w-screen-xl">
-            <Form id={post._id} />
-            {post.comments?.length > 0 && <Comments comments={post.comments} />}
-          </div>
-        </section>
-      </main>
+      </section>
     </>
   );
 };

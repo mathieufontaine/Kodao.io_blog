@@ -10,7 +10,7 @@ const categories = [
 
 const Categories = ({ filterCategories, filterMobile, title, openMenu }) => {
   return (
-    <section className="lg:sticky lg:top-0 relative z-10">
+    <section className="lg:sticky lg:top-0 relative z-10 bg-white">
       <div className="container py-4">
         {/* mobile version */}
         <div className="md:hidden w-full">

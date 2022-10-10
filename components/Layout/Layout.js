@@ -17,9 +17,7 @@ const Layout = ({ children }) => {
         <link rel="icon" href="/images/logo/logo.ico" />
       </Head>
       <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <main className="mt-[80px] md:mt-0" onClick={() => setMenuOpen(false)}>
-        {children}
-      </main>
+      <main onClick={() => setMenuOpen(false)}>{children}</main>
       <Footer />
     </>
   );

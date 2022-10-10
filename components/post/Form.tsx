@@ -44,9 +44,9 @@ const Form: React.FC<FormProps> = ({ id }) => {
           </div>
         ) : (
           <>
-            <h3 className="text-center text-lg md:text-xl">
+            <h2 className="text-center font-black text-2xl">
               Did you like this article?
-            </h3>
+            </h2>
             <h4 className="text-accent text-center text-lg md:text-xl">
               Leave a comment!
             </h4>
@@ -71,7 +71,7 @@ const Form: React.FC<FormProps> = ({ id }) => {
                   )}
                 </label>
                 <label className="block">
-                  <span className="mb-2">Email:</span>
+                  <span className="mb-2">Email: (will not be published)</span>
                   <input
                     {...register("email", { required: true })}
                     className="mt-2 bg-white p-3 outline-none w-full placeholder:text-gray-300"

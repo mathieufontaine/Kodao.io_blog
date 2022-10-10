@@ -6,14 +6,13 @@ import { config } from "../../client";
 
 const BlockRenderer = (props) => {
   const { style = "normal" } = props.node;
-
+  console.log(props);
   if (/^h\d/.test(style)) {
     const level = style.replace(/[^\d]/g, "");
-    console.log(level);
     let classNames;
     if (level === "2") {
       classNames =
-        "mt-5 py-7 font-semibold text-accent leading-8 sm:text-2xl md:text-3xl xl:text-4xl";
+        "mt-5 py-7 font-semibold text-accent leading-8 sm:text-2xl xl:text-3xl";
     } else if (level === "3") {
       classNames = "mt-3 py-5 font-semibold sm:text-lg md:text-xl xl:text-2xl";
     } else if (level === "4") {
@@ -53,7 +52,7 @@ const serializers = {
       }
       return (
         <iframe
-          className="block w-[500px] h-[400px] mx-auto"
+          className="block w-full lg:w-[600px] h-[400px] mx-auto mb-10"
           src={url}
           title="YouTube Preview"
           frameBorder="0"
@@ -89,10 +88,13 @@ const serializers = {
 const Article = ({ title, body }) => {
   return (
     <article className="bg-white text-black">
-      <div className="mx-auto px-10 xl:px-15 py-10 lg:max-w-[1200px]">
-        <h1 className="font-bold text-3xl sm:text-4xl md:text-5xl xl:text-6xl leading-8 md:mt-8 md:mb-12 text-left">
-          {title}
-        </h1>
+      <h1
+        className="bg-gradient-to-r from-[#330656] to-black font-bold text-3xl md:text-4xl 
+        leading-8 p-10 text-white"
+      >
+        {title}
+      </h1>
+      <div className="mx-auto px-10 xl:px-15 py-10 lg:max-w-[1000px]">
         <div className="pb-10">
           <BlockContent
             blocks={body}
