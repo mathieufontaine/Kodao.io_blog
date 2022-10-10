@@ -1,9 +1,9 @@
 import { sanityClient } from "../client";
 import { Post } from "../typings";
 import { GetStaticProps } from "next";
-import Hero from "../components/home/Hero";
-import PostList from "../components/home/PostList";
-import Cta from "../components/layout/Cta";
+import Hero from "../components/Home/Hero";
+import PostList from "../components/Home/PostList";
+import Cta from "../components/Layout/Cta";
 interface Props {
   posts: [Post];
 }

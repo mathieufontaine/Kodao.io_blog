@@ -3,10 +3,10 @@ import { GetStaticProps } from "next";
 import { Post } from "../../typings";
 import Head from "next/head";
 import Image from "next/image";
-import Sidebar from "../../components/post/Sidebar";
-import Article from "../../components/post/Article";
-import Comments from "../../components/post/comments";
-import Form from "../../components/post/Form";
+import Sidebar from "../../components/Post/Sidebar";
+import Article from "../../components/Post/Article";
+import Comments from "../../components/Post/comments";
+import Form from "../../components/Post/Form";
 
 interface Props {
   post: Post;
