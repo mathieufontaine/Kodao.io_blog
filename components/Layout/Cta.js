@@ -3,7 +3,7 @@ import Link from "next/link";
 const Cta = () => {
   return (
     <section className="bg-black text-white">
-      <div className="container">
+      <div className="container py-10">
         <div className="lg:grid lg:grid-cols-[2fr,1fr]">
           <div>
             <h3>Let us help you get started with Web3!</h3>

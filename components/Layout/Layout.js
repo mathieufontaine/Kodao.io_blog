@@ -1,5 +1,5 @@
-import Header from "./Page/Header";
-import Footer from "../components/Footer";
+import Header from "./Header";
+import Footer from "./Footer";
 import Head from "next/head";
 import React, { useState } from "react";
 
@@ -17,7 +17,9 @@ const Layout = ({ children }) => {
         <link rel="icon" href="/images/logo/logo.ico" />
       </Head>
       <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      <main onClick={() => setMenuOpen(false)}>{children}</main>
+      <main className="mt-[80px] md:mt-0" onClick={() => setMenuOpen(false)}>
+        {children}
+      </main>
       <Footer />
     </>
   );

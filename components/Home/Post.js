@@ -21,12 +21,12 @@ const Post = ({ post }) => {
           </div>
         )}
         <div className="p-8 overflow-hidden">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-2 text-xs md:text-sm ">
             <div className="flex justify-end text-white gap-2">
               {post.categories?.map((tag, index) => (
                 <div
                   key={index}
-                  className="bg-accent rounded-md p-2 text-sm text-center"
+                  className="bg-accent rounded-md p-2 text-center"
                 >
                   {tag}
                 </div>
@@ -41,7 +41,9 @@ const Post = ({ post }) => {
             </div>
           </div>
 
-          <h4 className="text-2xl leading-relaxed mt-4">{post.title}</h4>
+          <h4 className="text-xl md:text-2xl leading-relaxed mt-4">
+            {post.title}
+          </h4>
           {/* <p className="my-3 text-sm leading-loose">
             {post.excerpt}
             <span className="text-gray-400 p-3">Read more..</span>

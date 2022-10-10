@@ -33,7 +33,7 @@ const Sidebar = ({ post }) => {
 
   return (
     <aside className="bg-violet-100 text-black">
-      <div className="container md:sticky top-0 md:mb-[300px]">
+      <div className="container py-10 md:sticky top-0 md:mb-[300px]">
         <div className="flex items-center pb-5 gap-3 border-b-2 border-violet-200">
           <div className="relative w-20 h-20 rounded-full overflow-hidden">
             <Image
@@ -94,7 +94,7 @@ const Sidebar = ({ post }) => {
           </div>
         </div>
       </div>
-      <div className="container md:sticky md:top-[400px] text-center flex flex-col items-center justify-center">
+      <div className="container py-10 md:sticky md:top-[400px] text-center flex flex-col items-center justify-center">
         <h4 className="pb-3">Ready to get started with Web3 ?</h4>
         <p className="">
           Kodao.io supports you in all the steps of your project.

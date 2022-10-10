@@ -4,7 +4,7 @@ import { Post } from "../typings";
 import { GetStaticProps } from "next";
 import Hero from "../components/Home/Hero";
 import PostList from "../components/Home/PostList";
-
+import Cta from "../components/Layout/Cta";
 interface Props {
   posts: [Post];
 }
@@ -14,6 +14,7 @@ const Home = ({ posts }: Props) => {
     <>
       <Hero />
       <PostList posts={posts} />
+      <Cta />
     </>
   );
 };

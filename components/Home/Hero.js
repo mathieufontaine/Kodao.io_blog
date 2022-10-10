@@ -2,10 +2,10 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className=" bg-gradient-to-r from-[#330656] to-black mt-[10vh] md:mt-0">
-      <div className="container">
-        <div className="text-white max-w-[1000px] flex flex-col items-center justify-center mx-auto py-6">
-          <h1 className="text-5xl pb-0">Kodao.io Blog</h1>
+    <section className=" bg-gradient-to-r from-[#330656] to-black">
+      <div className="container py-16">
+        <div className="text-white flex flex-col items-center justify-center mx-auto py-6">
+          <h1 className="text-4xl md:text-5xl pb-0">Kodao.io Blog</h1>
           <div className="relative w-full h-10 my-5">
             <Image
               layout="fill"

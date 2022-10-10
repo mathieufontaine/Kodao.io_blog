@@ -23,9 +23,9 @@
     "components/Home/Post.js",
     "components/Page/Form.tsx",
     "components/Blog.js",
-    "components/Page/Header.js",
+    "components/Header.js",
     "components/Footer.js",
-    "components/Cta.js",
+    "components/Layout/Cta.js",
     "pages/[slug].js"
   ],
   "exclude": ["node_modules"]

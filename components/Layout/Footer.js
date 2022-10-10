@@ -11,7 +11,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 const Footer = () => {
   return (
     <footer className="bg-white">
-      <div className="container">
+      <div className="container py-10">
         <div className="mx-auto text-center max-w-xl flex flex-col sm:px-8 lg:px-40 sm:max-w-screen-lg sm:text-left sm:w-full sm:flex-row justify-between">
           <div className="my-5">
             <h4

@@ -18,9 +18,10 @@ const BlockRenderer = (props) => {
     console.log(level);
     let classNames;
     if (level === "2") {
-      classNames = "mt-5 py-5 font-semibold text-accent";
+      classNames =
+        "mt-5 py-7 font-semibold text-accent leading-8 sm:text-2xl md:text-3xl xl:text-4xl";
     } else if (level === "3") {
-      classNames = "mt-3 py-5 font-semibold";
+      classNames = "mt-3 py-5 font-semibold sm:text-lg md:text-xl xl:text-2xl";
     } else if (level === "4") {
       classNames = "py-5 font-base";
     }
@@ -136,10 +137,10 @@ const PostPage = ({ post }) => {
             alt={post.title}
           />
         </div>
-        <article className="grid md:grid-cols-[3fr_1fr]">
+        <article className="lg:grid grid-cols-[4fr_1fr]">
           <section className="bg-white text-black">
-            <div className="container lg:max-w-[1200px]">
-              <h1 className="font-bold text-5xl xl:text-6xl leading-relaxed md:mt-4 md:mb-8 text-left">
+            <div className="mx-auto px-10 xl:px-15 py-10 lg:max-w-[1200px]">
+              <h1 className="font-bold text-3xl sm:text-4xl md:text-5xl xl:text-6xl leading-8 md:mt-8 md:mb-12 text-left">
                 {post.title}
               </h1>
               <div className="pb-10">
@@ -179,7 +180,7 @@ const PostPage = ({ post }) => {
           <Sidebar post={post} />
         </article>
         <section
-          className={`bg-gray-100 ${
+          className={`bg-gray-100 py-10 ${
             post.comments?.length > 0 && "grid grid-cols-1 lg:grid-cols-2"
           }`}
         >
