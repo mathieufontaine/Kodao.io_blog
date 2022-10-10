@@ -20,10 +20,10 @@
     "**/*.ts",
     "**/*.tsx",
     "components/SinglePost.js",
-    "components/Home/Post.js",
-    "components/Page/Form.tsx",
+    "components/home/Card.js",
+    "components/post/Form.tsx/Form.tsx",
     "components/Blog.js",
-    "components/Header.js",
+    "components/post/Header.js",
     "components/Footer.js",
     "components/Layout/Cta.js",
     "pages/[slug].js"

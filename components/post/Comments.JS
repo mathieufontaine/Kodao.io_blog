@@ -1,7 +1,7 @@
-const Comments = ({ comments }) => {
+const Comments = ({ comments = [] }) => {
   return (
-    <>
-      <h3>Commentaires</h3>
+    <div className="container">
+      <h3>Comments</h3>
       {comments.map((comment) => (
         <div key={comment._id}>
           <span className="font-bold mr-3">
@@ -17,7 +17,7 @@ const Comments = ({ comments }) => {
           </div>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 

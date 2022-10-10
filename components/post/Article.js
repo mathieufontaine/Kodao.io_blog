@@ -1,14 +1,8 @@
-import React, { useEffect, useState } from "react";
-import BlockContent from "@sanity/block-content-to-react";
-import Form from "./Form";
-import getYoutubeId from "get-youtube-id";
-import { urlFor, config } from "../../client";
+import React from "react";
 import PortableText from "react-portable-text";
-import Head from "next/head";
-import Comments from "./Comments";
-import Image from "next/image";
-import Link from "next/link";
-import Sidebar from "./Sidebar";
+import BlockContent from "@sanity/block-content-to-react";
+import getYoutubeId from "get-youtube-id";
+import { config } from "../../client";
 
 const BlockRenderer = (props) => {
   const { style = "normal" } = props.node;
@@ -92,65 +86,30 @@ const serializers = {
   },
 };
 
-const PostPage = ({ post }) => {
-  // useEffect(() => {
-  //   const aside = document.querySelector("aside");
-  //   const navbar = document.querySelector("header").offsetHeight;
-  //   const onScroll = () => {
-  //     const sticky = aside.offsetTop - navbar;
-  //     console.log(aside.offsetTop);
-  //     if (window.pageYOffset > sticky) {
-  //       aside.classList.add("fixed");
-  //       aside.classList.add("top-[10vh]");
-  //     } else {
-  //       aside.classList.remove("fixed");
-  //       aside.classList.remove("top-[10vh]");
-  //     }
-  //   };
-  //   // clean up code
-  //   window.removeEventListener("scroll", onScroll);
-  //   window.addEventListener("scroll", onScroll, { passive: true });
-  //   return () => window.removeEventListener("scroll", onScroll);
-  // }, []);
-
+const Article = ({ title, body }) => {
   return (
-    <>
-      <Head>
-        <title>Kodao.io Blog - {post.title}</title>
-        <meta name="description" content={post.excerpt} />
-      </Head>
-      <main>
-        {/* {preview && (
-          <Link
-            href="/api/exit-preview"
-            className="fixed bottom-4 right-4 p-4 bg-green-600 text-white"
-          >
-            Preview Mode Activated!
-          </Link>
-        )} */}
-        {/* {!isLoading && post !== null && ( */}
-        <div className="relative pb-1/2 sm:pb-1/3 md:pb-1/4 lg:pb-1/5 xl:pb-1/6 w-full mt-[10vh] md:mt-0">
-          <Image
-            layout="fill"
-            objectFit="cover"
-            src={urlFor(post.mainImage).url()}
-            alt={post.title}
+    <article className="bg-white text-black">
+      <div className="mx-auto px-10 xl:px-15 py-10 lg:max-w-[1200px]">
+        <h1 className="font-bold text-3xl sm:text-4xl md:text-5xl xl:text-6xl leading-8 md:mt-8 md:mb-12 text-left">
+          {title}
+        </h1>
+        <div className="pb-10">
+          <BlockContent
+            blocks={body}
+            projectId={config.projectId}
+            dataset="production"
+            serializers={serializers}
           />
         </div>
-        <article className="lg:grid grid-cols-[4fr_1fr]">
-          <section className="bg-white text-black">
-            <div className="mx-auto px-10 xl:px-15 py-10 lg:max-w-[1200px]">
-              <h1 className="font-bold text-3xl sm:text-4xl md:text-5xl xl:text-6xl leading-8 md:mt-8 md:mb-12 text-left">
-                {post.title}
-              </h1>
-              <div className="pb-10">
-                <BlockContent
-                  blocks={post.body}
-                  projectId={config.projectId}
-                  dataset="production"
-                  serializers={serializers}
-                />
-                {/* <PortableText
+      </div>
+    </article>
+  );
+};
+
+export default Article;
+
+{
+  /* <PortableText
                   projectId={config.projectId}
                   dataset="production"
                   content={post.body}
@@ -173,30 +132,5 @@ const PostPage = ({ post }) => {
                         <a href={mark.href}>{children}</a>
                       ),
                   }}
-                /> */}
-              </div>
-            </div>
-          </section>
-          <Sidebar post={post} />
-        </article>
-        <section
-          className={`bg-gray-100 py-10 ${
-            post.comments?.length > 0 && "grid grid-cols-1 lg:grid-cols-2"
-          }`}
-        >
-          <div className="mx-auto xl:max-w-screen-xl">
-            <Form id={post._id} />
-            {post.comments?.length > 0 && (
-              <div className="container">
-                {/* <hr className="article_line" /> */}
-                <Comments comments={post.comments} />
-              </div>
-            )}
-          </div>
-        </section>
-      </main>
-    </>
-  );
-};
-
-export default PostPage;
+                /> */
+}

@@ -1,8 +1,8 @@
-import Post from "./Post";
 import React, { useEffect, useState } from "react";
-import PostsFilter from "./PostsFilter";
+import Categories from "./Categories";
+import Card from "./Card";
 
-const PostList = ({ posts }) => {
+const CardList = ({ posts }) => {
   const [title, setTitle] = useState("All Articles");
   const [filteredPosts, setFilteredPosts] = useState([]);
   const [openMenu, setOpenMenu] = useState(false);
@@ -34,7 +34,7 @@ const PostList = ({ posts }) => {
 
   return (
     <section className="bg-white">
-      <PostsFilter
+      <Categories
         filterCategories={filterCategories}
         filterMobile={filterMobile}
         title={title}
@@ -47,7 +47,7 @@ const PostList = ({ posts }) => {
           mx-auto w-full"
         >
           {filteredPosts?.map((post) => (
-            <Post key={post._id} post={post} />
+            <Card key={post._id} post={post} />
           ))}
         </div>
       </div>
@@ -55,4 +55,4 @@ const PostList = ({ posts }) => {
   );
 };
 
-export default PostList;
+export default CardList;

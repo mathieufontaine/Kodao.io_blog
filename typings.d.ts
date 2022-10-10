@@ -20,4 +20,5 @@ export interface Post {
   categories: {
     title: string;
   };
+  comments: [object];
 }

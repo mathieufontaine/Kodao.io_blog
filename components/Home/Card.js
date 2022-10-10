@@ -3,7 +3,7 @@ import { urlFor } from "../../client";
 import Link from "next/link";
 import Image from "next/image";
 
-const Post = ({ post }) => {
+const Card = ({ post }) => {
   return (
     <Link key={post._id} href={`/post/${post.slug?.current}`}>
       <div
@@ -66,4 +66,4 @@ const Post = ({ post }) => {
   );
 };
 
-export default Post;
+export default Card;

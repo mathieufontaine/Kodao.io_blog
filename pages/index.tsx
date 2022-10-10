@@ -1,10 +1,9 @@
-import type { NextPage } from "next";
-import { sanityClient, urlFor } from "../client";
+import { sanityClient } from "../client";
 import { Post } from "../typings";
 import { GetStaticProps } from "next";
-import Hero from "../components/Home/Hero";
-import PostList from "../components/Home/PostList";
-import Cta from "../components/Layout/Cta";
+import Hero from "../components/home/Hero";
+import PostList from "../components/home/PostList";
+import Cta from "../components/layout/Cta";
 interface Props {
   posts: [Post];
 }

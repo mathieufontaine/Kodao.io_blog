@@ -8,7 +8,7 @@ const categories = [
   "Guides & Tutorials",
 ];
 
-const PostsFilter = ({ filterCategories, filterMobile, title, openMenu }) => {
+const Categories = ({ filterCategories, filterMobile, title, openMenu }) => {
   return (
     <section className="lg:sticky lg:top-0 relative z-10">
       <div className="container py-4">
@@ -65,4 +65,4 @@ const PostsFilter = ({ filterCategories, filterMobile, title, openMenu }) => {
   );
 };
 
-export default PostsFilter;
+export default Categories;

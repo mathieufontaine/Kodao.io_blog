@@ -1,14 +1,54 @@
 import { sanityClient, urlFor } from "../../client";
-import PostPage from "../../components/Page/PostPage";
 import { GetStaticProps } from "next";
 import { Post } from "../../typings";
+import Head from "next/head";
+import Image from "next/image";
+import Sidebar from "../../components/post/Sidebar";
+import Article from "../../components/post/Article";
+import Comments from "../../components/post/comments";
+import Form from "../../components/post/Form";
 
 interface Props {
   post: Post;
 }
 
 const Post = ({ post }: Props) => {
-  return <PostPage post={post} />;
+  return (
+    <>
+      {/* metadata */}
+      <Head>
+        <title>Kodao.io Blog - {post.title}</title>
+        <meta name="description" content={post.excerpt} />
+      </Head>
+      <main>
+        {/* banner */}
+        <div className="relative pb-1/2 sm:pb-1/3 md:pb-1/4 lg:pb-1/5 xl:pb-1/6 w-full mt-[10vh] md:mt-0">
+          <Image
+            layout="fill"
+            objectFit="cover"
+            src={urlFor(post.mainImage).url()}
+            alt={post.title}
+          />
+        </div>
+        {/* content */}
+        <section className="lg:grid grid-cols-[4fr_1fr]">
+          <Article title={post.title} body={post.body} />
+          <Sidebar post={post} />
+        </section>
+        {/* Comments space */}
+        <section
+          className={`bg-gray-100 py-10 ${
+            post.comments?.length > 0 && "grid grid-cols-1 lg:grid-cols-2"
+          }`}
+        >
+          <div className="mx-auto xl:max-w-screen-xl">
+            <Form id={post._id} />
+            {post.comments?.length > 0 && <Comments comments={post.comments} />}
+          </div>
+        </section>
+      </main>
+    </>
+  );
 };
 
 export default Post;
@@ -70,41 +110,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       post,
     },
-    revalidate: 60, // update cached version every 60 secs
+    revalidate: 360, // update cached version every 60 secs
   };
 };
-
-// const fetchData = async () => {
-//   setIsLoading(true);
-//   try {
-//     const data = await sanityClient.fetch(
-//       `*[slug.current == "${slug}"]{
-//       title,
-//       slug,
-//       publishedAt,
-//       categories,
-//       excerpt,
-//       mainImage{
-//         asset->{
-//           url}},
-//       body[]{
-//         ...,
-//         markDefs[]{
-//           ...,
-//           _type == "internalLink" => {
-//             "slug": @.reference->slug
-//           }
-//         }
-//       },
-//       "authorName":author->name,
-//       "authorImage": author->image,
-//     }`
-//     );
-//     console.log(data);
-//     setPost(data[0]);
-//     setIsLoading(false);
-//   } catch (error) {
-//     console.log(error);
-//     setIsLoading(false);
-//   }
-// };
