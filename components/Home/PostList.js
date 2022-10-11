@@ -40,7 +40,7 @@ const CardList = ({ posts }) => {
         title={title}
         openMenu={openMenu}
       />
-      <div className="container py-10">
+      <div className="container p-6 md:p-10 xl:p-15">
         {title && <h3>{title}</h3>}
         <div
           className="mt-3 pt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 
