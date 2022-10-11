@@ -1,11 +1,27 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const Cta = () => {
   return (
     <section className="bg-black text-white">
-      <div className="container py-10">
-        <div className="lg:grid lg:grid-cols-[2fr,1fr]">
+      <div className="container p-6 md:p-10 xl:p-15">
+        <div className="grid grid-col-1 lg:grid-cols-[2fr,1fr] text-center lg:text-left">
           <div>
+            <a
+              href="https://www.kodao.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex justify-center lg:block"
+            >
+              <div className="relative h-20 w-40">
+                <Image
+                  layout="fill"
+                  objectFit="contain"
+                  src="/images/logo/logo-white.svg"
+                  alt="logo kodao"
+                />
+              </div>
+            </a>
             <h3>Let us help you get started with Web3!</h3>
             <p>
               Web3 changes the way we interact with the internet. Instead of
@@ -22,7 +38,7 @@ const Cta = () => {
             </p>
             <h4 className="mt-4">Lets&apos;s get started with web3 now!</h4>
           </div>
-          <div className="flex items-center lg:justify-center">
+          <div className="flex items-center justify-center">
             <a
               href="https://www.kodao.io"
               target="_blank"

@@ -64,10 +64,14 @@ h4 {
   padding-bottom: 10px;
 }
 
+strong {
+  font-weight: 500;
+}
 p,
 li {
   font-weight: 100;
-  line-height: 26px;
+  line-height: 2.3rem;
+  font-size: 1.1rem;
 }
 
 mark {
@@ -75,14 +79,19 @@ mark {
   color: var(--secondary-color);
 }
 
-figure img {
+figure {
+  display: block;
   max-width: 100%;
-  margin: 30px auto 10px;
   max-height: 400px;
-  width: 100%;
-  object-fit: cover;
+  margin: 30px auto 10px;
   border-radius: 8px;
   border: 6px solid var(--accent-color);
+  overflow: hidden;
+}
+
+figure img {
+  width: 100%;
+  object-fit: cover;
 }
 
 /* article ul,
@@ -90,23 +99,40 @@ ol {
 } */
 
 article ol {
-  margin: 30px;
+  padding: 2rem 3rem;
   list-style: auto;
 }
 
 article ul {
-  margin: 30px;
-  list-style: disc;
+  padding: 2rem 1rem;
+  /* list-style: disc; */
 }
 
 article li {
-  padding: 0.3rem;
-  font-weight: 500;
+  margin: 1rem 0;
 }
 
-article li::marker {
+article li:first-child {
+  margin-top: 0;
+}
+
+article li:last-child {
+  margin-bottom: 0;
+}
+
+article ol li::marker {
   color: var(--accent-color);
-  font-size: 2rem;
+  font-size: 1.8rem;
+  margin-right: 0.5rem;
+}
+
+article ul li::before {
+  content: "\2B24";
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  color: var(--accent-color);
+  margin-right: 0.5rem;
 }
 
 textarea:focus,
@@ -116,8 +142,6 @@ input:focus {
 }
 
 .container {
-  padding-left: 5rem;
-  padding-right: 5rem;
   max-width: 1500px;
   margin: 0 auto;
 }
@@ -148,19 +172,23 @@ input:focus {
 } */
 
 @media (min-width: 800px) {
-  figure img {
+  figure {
     max-width: 600px;
   }
 }
 @media (min-width: 1400px) {
-  figure img {
+  figure {
     max-width: 800px;
     max-height: 450px;
   }
+}
 
-  @media (max-width: 600px) {
-    .container {
-      padding: 30px;
-    }
+@media (max-width: 600px) {
+  /* p,
+  li {
+    font-size: 1rem;
+  } */
+  html {
+    font-size: 12px;
   }
 }

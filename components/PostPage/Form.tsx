@@ -35,7 +35,7 @@ const Form: React.FC<FormProps> = ({ id }) => {
   };
 
   return (
-    <div className="container">
+    <div className="container p-6 md:p-10 xl:p-15">
       <div className="max-w-4xl mx-auto">
         {submitted ? (
           <div className="form_success">
@@ -55,7 +55,7 @@ const Form: React.FC<FormProps> = ({ id }) => {
               onSubmit={handleSubmit(onSubmit)}
             >
               <input {...register("_id")} type="hidden" name="_id" value={id} />
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid md:grid-cols-2 gap-4">
                 <label className="block">
                   <span className="mb-2">Name:</span>
                   <input
@@ -71,7 +71,9 @@ const Form: React.FC<FormProps> = ({ id }) => {
                   )}
                 </label>
                 <label className="block">
-                  <span className="mb-2">Email: (will not be published)</span>
+                  <span className="mb-2 mt-5 md:mt-0">
+                    Email: (will not be published)
+                  </span>
                   <input
                     {...register("email", { required: true })}
                     className="mt-2 bg-white p-3 outline-none w-full placeholder:text-gray-300"

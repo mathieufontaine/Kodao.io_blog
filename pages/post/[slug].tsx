@@ -7,6 +7,7 @@ import Sidebar from "../../components/PostPage/Sidebar";
 import Article from "../../components/PostPage/Article";
 import Comments from "../../components/PostPage/Comments";
 import Form from "../../components/PostPage/Form";
+import Cta from "../../components/Layout/Cta";
 
 interface Props {
   post: Post;
@@ -45,6 +46,7 @@ const Post = ({ post }: Props) => {
           {post.comments?.length > 0 && <Comments comments={post.comments} />}
         </div>
       </section>
+      <Cta />
     </>
   );
 };

@@ -9,15 +9,18 @@ const Header = ({ menuOpen, setMenuOpen }) => {
   return (
     <header
       className=" text-white bg-black top-0 z-20 w-full sticky md:relative flex items-center
-       "
+      "
     >
-      <div className="container py-4 flex items-center justify-between md:justify-start">
+      <div
+        className="w-full max-w-[1400px] xl:mx-auto px-10 xl:px-15 py-2 flex items-center 
+      justify-between md:justify-start"
+      >
         <a
           href="https://www.kodao.io"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div className="relative h-20 w-40">
+          <div className="relative h-14 w-28 md:h-20 md:w-40">
             <Image
               layout="fill"
               objectFit="contain"
@@ -67,7 +70,7 @@ const Header = ({ menuOpen, setMenuOpen }) => {
           </ul>
         </nav>
         <button
-          className="md:hidden text-big"
+          className="md:hidden text-3xl md:text-big"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? (

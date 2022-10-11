@@ -87,15 +87,17 @@ const serializers = {
 
 const Article = ({ title, body }) => {
   return (
-    <article className="bg-white text-black">
-      <h1
-        className="bg-gradient-to-r from-[#330656] to-black font-bold text-3xl md:text-4xl 
-        leading-8 p-10 text-white"
-      >
-        {title}
-      </h1>
-      <div className="mx-auto px-10 xl:px-15 py-10 lg:max-w-[1000px]">
-        <div className="pb-10">
+    <article className="bg-white text-black leading-5">
+      <div className="bg-gradient-to-r from-[#330656] to-black">
+        <h1
+          className=" leading-10  text-white p-6 md:p-10 xl:p-15 font-bold text-3xl md:text-4xl 
+        text-left mx-auto lg:max-w-[1000px]"
+        >
+          {title}
+        </h1>
+      </div>
+      <div className="mx-auto p-6 md:p-10 xl:p-15 lg:max-w-[1000px]">
+        <div className="pb-10 ">
           <BlockContent
             blocks={body}
             projectId={config.projectId}
