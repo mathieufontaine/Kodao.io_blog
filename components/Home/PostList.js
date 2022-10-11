@@ -3,12 +3,13 @@ import Categories from "./Categories";
 import Card from "./Card";
 
 const CardList = ({ posts }) => {
-  const [title, setTitle] = useState("All Articles");
+  const [category, setCategory] = useState("All Articles");
   const [filteredPosts, setFilteredPosts] = useState([]);
+  const [latestPosts, setLatestPosts] = useState([]);
   const [openMenu, setOpenMenu] = useState(false);
 
   useEffect(() => {
-    setFilteredPosts(posts);
+    filterCategories(category);
   }, [posts]);
 
   const filterMobile = (e) => {
@@ -21,9 +22,10 @@ const CardList = ({ posts }) => {
   };
 
   const filterCategories = (element) => {
-    setTitle(element);
+    setCategory(element);
     if (element === "All Articles") {
-      setFilteredPosts(posts);
+      setFilteredPosts(posts.slice(3));
+      setLatestPosts(posts.slice(0, 3));
       return;
     }
     const postsArray = posts.filter(
@@ -37,13 +39,27 @@ const CardList = ({ posts }) => {
       <Categories
         filterCategories={filterCategories}
         filterMobile={filterMobile}
-        title={title}
+        category={category}
         openMenu={openMenu}
       />
       <div className="container p-6 md:p-10 xl:p-15">
-        {title && <h3>{title}</h3>}
+        {category === "All Articles" && (
+          <>
+            <h3>Latest Articles</h3>
+            <div
+              className="mb-8 py-5 grid md:grid-cols-2 lg:grid-cols-3 gap-8 
+           mx-auto w-full"
+            >
+              {latestPosts?.map((post) => (
+                <Card key={post._id} post={post} />
+              ))}
+            </div>
+            <hr className="mx-auto mb-8 md:h-[2px] " />
+          </>
+        )}
+        <h3>{category === "All Articles" ? "More Web3 Articles" : category}</h3>
         <div
-          className="mt-3 pt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 
+          className="pt-5 grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 
           mx-auto w-full"
         >
           {filteredPosts?.map((post) => (

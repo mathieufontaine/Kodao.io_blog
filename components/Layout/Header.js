@@ -20,7 +20,7 @@ const Header = ({ menuOpen, setMenuOpen }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div className="relative h-14 w-28 md:h-20 md:w-40">
+          <div className="relative h-16 w-32 md:h-20 md:w-40">
             <Image
               layout="fill"
               objectFit="contain"
@@ -70,7 +70,7 @@ const Header = ({ menuOpen, setMenuOpen }) => {
           </ul>
         </nav>
         <button
-          className="md:hidden text-3xl md:text-big"
+          className="md:hidden text-4xl md:text-big"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? (

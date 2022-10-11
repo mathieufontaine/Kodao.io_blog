@@ -8,7 +8,7 @@ const categories = [
   "Guides & Tutorials",
 ];
 
-const Categories = ({ filterCategories, filterMobile, title, openMenu }) => {
+const Categories = ({ filterCategories, filterMobile, category, openMenu }) => {
   return (
     <section className="lg:sticky lg:top-0 relative z-10 bg-white">
       <div className="container py-4">
@@ -18,7 +18,7 @@ const Categories = ({ filterCategories, filterMobile, title, openMenu }) => {
             <div
               key={index}
               className={`cursor-pointer ${
-                openMenu || cat === title ? "block" : "hidden"
+                openMenu || cat === category ? "block" : "hidden"
               }`}
               onClick={() => filterMobile(cat)}
             >
@@ -27,7 +27,7 @@ const Categories = ({ filterCategories, filterMobile, title, openMenu }) => {
                 {index === 0 && openMenu && (
                   <FontAwesomeIcon icon={faAngleUp} className="mr-3 text-lg" />
                 )}
-                {cat === title && !openMenu && (
+                {cat === category && !openMenu && (
                   <FontAwesomeIcon
                     icon={faAngleDown}
                     className="mr-3 text-lg"
@@ -36,7 +36,9 @@ const Categories = ({ filterCategories, filterMobile, title, openMenu }) => {
               </div>
               <hr
                 className={`mx-auto transition-all ${
-                  cat === title ? "h-1 bg-accent mx-2" : "md:h-1 md:bg-gray-200"
+                  cat === category
+                    ? "h-1 bg-accent mx-2"
+                    : "md:h-1 md:bg-gray-200"
                 }`}
               />
             </div>
@@ -54,7 +56,7 @@ const Categories = ({ filterCategories, filterMobile, title, openMenu }) => {
               <h4 className="text-xl px-8 py-4 hover:text-accent">{cat}</h4>
               <hr
                 className={`mx-auto transition-all ${
-                  cat === title ? "h-1 bg-accent mx-2" : "h-1 bg-gray-200"
+                  cat === category ? "h-1 bg-accent mx-2" : "h-1 bg-gray-200"
                 }`}
               />
             </div>
