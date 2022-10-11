@@ -6,7 +6,6 @@ import { config } from "../../client";
 
 const BlockRenderer = (props) => {
   const { style = "normal" } = props.node;
-  console.log(props);
   if (/^h\d/.test(style)) {
     const level = style.replace(/[^\d]/g, "");
     let classNames;

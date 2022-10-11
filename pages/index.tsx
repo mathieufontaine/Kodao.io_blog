@@ -4,6 +4,8 @@ import { GetStaticProps } from "next";
 import Hero from "../components/Home/Hero";
 import PostList from "../components/Home/PostList";
 import Cta from "../components/Layout/Cta";
+import { sortPosts } from "../utils/helpers";
+
 interface Props {
   posts: [Post];
 }
@@ -33,11 +35,13 @@ export const getStaticProps: GetStaticProps = async () => {
    }`;
 
   const data = await sanityClient.fetch(query);
-  const posts = data.sort((p1: Post, p2: Post) => {
-    const p1Date = new Date(p1.publishedAt);
-    const p2Date = new Date(p2.publishedAt);
-    return p2Date.getTime() - p1Date.getTime();
-  });
+  const posts = sortPosts(data);
+
+  // const posts = data.sort((p1: Post, p2: Post) => {
+  //   const p1Date = new Date(p1.publishedAt);
+  //   const p2Date = new Date(p2.publishedAt);
+  //   return p2Date.getTime() - p1Date.getTime();
+  // });
 
   return {
     props: {

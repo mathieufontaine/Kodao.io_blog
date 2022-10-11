@@ -17,8 +17,6 @@ export interface Post {
     current: string;
   };
   body: [object];
-  categories: {
-    title: string;
-  };
-  comments: [object];
+  categories: [string];
+  comments?: [object];
 }
